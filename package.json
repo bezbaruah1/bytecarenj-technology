@@ -1,0 +1,19 @@
+{
+  "name": "bytecare-nj-technology",
+  "version": "1.0.0",
+  "description": "Full Stack Web Application for Bytecare NJ Technology — Goalpara, Assam",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'No build step required for Node/Express server'"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "serverless-http": "^4.0.0"
+  },
+  "keywords": [],
+  "author": "Bytecare NJ Technology",
+  "license": "ISC"
+}

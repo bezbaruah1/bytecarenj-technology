@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Admin Portal — Bytecare NJ Technology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body { background: var(--color-bg-light); min-height: 100vh; }
+    .admin-header {
+      background: var(--color-navy-darkest);
+      color: #ffffff;
+      padding: 1rem 0;
+      border-bottom: 2px solid var(--color-primary);
+    }
+    .admin-header .container {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .admin-title {
+      font-family: var(--font-title); font-size: 1.3rem; font-weight: 700;
+    }
+    .admin-title span { color: var(--color-primary); }
+
+    /* Login Box */
+    .login-container {
+      max-width: 420px;
+      margin: 5rem auto;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 2.5rem;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 16px 36px rgba(11, 42, 82, 0.08);
+    }
+
+    /* Dashboard Layout */
+    .dashboard-container { display: none; padding: 2.5rem 0; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2.5rem;
+    }
+    .stat-card {
+      background: #ffffff; border-radius: 12px; padding: 1.5rem;
+      border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary);
+    }
+    .stat-card h4 {
+      font-size: 0.82rem; text-transform: uppercase; font-family: var(--font-mono);
+      color: var(--color-text-muted); margin: 0 0 0.5rem;
+    }
+    .stat-card .val {
+      font-family: var(--font-title); font-size: 2.2rem; font-weight: 700; color: var(--color-navy-brand);
+    }
+
+    /* Tabs */
+    .admin-tabs {
+      display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-border);
+    }
+    .tab-btn {
+      padding: 0.8rem 1.4rem; font-weight: 600; font-family: var(--font-body);
+      background: none; border: none; cursor: pointer; color: var(--color-text-muted);
+      border-bottom: 3px solid transparent; margin-bottom: -2px;
+    }
+    .tab-btn.active {
+      color: var(--color-navy-brand); border-bottom-color: var(--color-primary);
+    }
+
+    /* Tables */
+    .data-table-card {
+      background: #ffffff; border-radius: 12px; border: 1px solid var(--color-border);
+      overflow-x: auto; padding: 1rem;
+    }
+    table.admin-table {
+      width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;
+    }
+    table.admin-table th {
+      background: var(--color-bg-light); padding: 0.9rem 1rem;
+      font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase;
+      color: var(--color-navy-brand); border-bottom: 2px solid var(--color-border);
+    }
+    table.admin-table td {
+      padding: 1rem; border-bottom: 1px solid var(--color-border); vertical-align: top;
+    }
+    .notes-input {
+      width: 100%; min-width: 180px; font-size: 0.82rem; padding: 0.4rem;
+      border: 1px solid var(--color-border); border-radius: 4px;
+    }
+    .status-select {
+      font-weight: 600; font-size: 0.85rem; padding: 0.4rem 0.6rem; border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="admin-header">
+  <div class="container">
+    <div class="admin-title">
+      BYTE<span>CARE</span> NJ — Shop Admin Dashboard
+    </div>
+    <div>
+      <a href="/" class="btn-secondary btn-sm" style="color:#fff; border-color:rgba(255,255,255,0.4);">View Live Website</a>
+      <button class="btn-primary btn-sm" id="logoutBtn" style="display:none; margin-left:0.5rem;" onclick="logoutAdmin()">Logout</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Login Section -->
+  <div class="login-container" id="loginBox">
+    <h2 style="font-family: var(--font-title); color: var(--color-navy-brand); margin-top: 0;">Shop Admin Authentication</h2>
+    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Enter administrator password to access shop ticket management &amp; reviews.</p>
+
+    <form id="adminLoginForm">
+      <div class="form-group">
+        <label for="adminPass">Admin Password</label>
+        <input type="password" id="adminPass" class="form-control" placeholder="Default: admin123" required>
+      </div>
+      <button type="submit" class="btn-primary" style="width: 100%;">Access Dashboard</button>
+    </form>
+    <div style="font-size:0.78rem; color:var(--color-text-muted); margin-top:1rem; text-align:center;">
+      Default password is <code>admin123</code>
+    </div>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div class="dashboard-container" id="dashboardBox">
+    <!-- Stat Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h4>Total Repairs</h4>
+        <div class="val" id="statTotal">0</div>
+      </div>
+      <div class="stat-card" style="border-left-color:#3b82f6;">
+        <h4>Active Jobs</h4>
+        <div class="val" id="statActive">0</div>
+      </div>
+      <div class="stat-card" style="border-left-color:#10b981;">
+        <h4>Ready for Pickup</h4>
+        <div class="val" id="statReady">0</div>
+      </div>
+      <div class="stat-card" style="border-left-color:#ef4444;">
+        <h4>Unread Inquiries</h4>
+        <div class="val" id="statInquiries">0</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="admin-tabs">
+      <button class="tab-btn active" onclick="switchTab('tickets')">Repair &amp; Survey Tickets</button>
+      <button class="tab-btn" onclick="switchTab('contacts')">Contact Inquiries</button>
+      <button class="tab-btn" onclick="switchTab('reviews')">Review Moderation</button>
+    </div>
+
+    <!-- Tab 1: Tickets Table -->
+    <div id="tabTickets" class="tab-content">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <h3 style="margin:0; font-family:var(--font-title); color:var(--color-navy-brand);">Repair &amp; CCTV Job Tickets</h3>
+        <div>
+          <button class="btn-secondary btn-sm" onclick="loadDashboard()">Refresh Data</button>
+        </div>
+      </div>
+
+      <div class="data-table-card">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Ticket ID</th>
+              <th>Customer</th>
+              <th>Phone</th>
+              <th>Service &amp; Model</th>
+              <th>Problem / Notes</th>
+              <th>Status</th>
+              <th>Est. Cost (₹)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="ticketsTableBody">
+            <!-- Loaded by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 2: Contacts Table -->
+    <div id="tabContacts" class="tab-content" style="display:none;">
+      <h3 style="font-family:var(--font-title); color:var(--color-navy-brand); margin-bottom:1rem;">Customer Inquiries</h3>
+      <div class="data-table-card">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Phone / Email</th>
+              <th>Message</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="contactsTableBody">
+            <!-- Loaded by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 3: Reviews Table -->
+    <div id="tabReviews" class="tab-content" style="display:none;">
+      <h3 style="font-family:var(--font-title); color:var(--color-navy-brand); margin-bottom:1rem;">Moderate Reviews</h3>
+      <div class="data-table-card">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Reviewer</th>
+              <th>Service / Location</th>
+              <th>Rating</th>
+              <th>Comment</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="reviewsTableBody">
+            <!-- Loaded by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>

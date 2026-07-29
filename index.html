@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bytecare NJ Technology — Goalpara, Assam</title>
+<meta name="description" content="Bytecare NJ Technology — laptop repair, PC repair, passport photo printing and CCTV installation in Goalpara, Assam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =============================================================
+   Compiled from bytecare-nj-technology.less via lessc.
+   Source LESS file ships alongside this page — edit the .less,
+   recompile, and drop the output back in here.
+   ============================================================= */
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(127, 227, 239, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(127, 227, 239, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(127, 227, 239, 0);
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #0e2136;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #17b6d4;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(11, 42, 82, 0.12);
+}
+.site-header .header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 0;
+}
+.site-header .brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+.site-header .brand .brand-name {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  color: #0b2a52;
+}
+.site-header .brand .brand-name span {
+  color: #17b6d4;
+}
+.site-header .brand .brand-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(14, 33, 54, 0.65);
+  margin-top: 0.3rem;
+}
+.site-header nav.main-nav ul {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-header nav.main-nav ul li a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: #0e2136;
+  position: relative;
+  padding-bottom: 4px;
+}
+.site-header nav.main-nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #17b6d4;
+  transition: width 0.2s ease;
+}
+.site-header nav.main-nav ul li a:hover,
+.site-header nav.main-nav ul li a.active {
+  color: #0b2a52;
+}
+.site-header nav.main-nav ul li a:hover::after,
+.site-header nav.main-nav ul li a.active::after {
+  width: 100%;
+}
+.site-header .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.site-header .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+.site-header .nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #0b2a52;
+  margin: 5px 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f8fc 100%);
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
+}
+.hero .hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+.hero .hero-copy .status-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+.hero .hero-copy .status-line .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7fe3ef;
+  box-shadow: 0 0 0 0 rgba(127, 227, 239, 0.55);
+  animation: pulse-dot 2.2s ease-out infinite;
+}
+.hero .hero-copy h1 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: #0b2a52;
+  margin: 0 0 1.1rem;
+}
+.hero .hero-copy p.lead {
+  font-size: 1.05rem;
+  color: rgba(14, 33, 54, 0.65);
+  max-width: 46ch;
+  margin: 0 0 2rem;
+  line-height: 1.65;
+}
+.hero .hero-copy .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.hero .hero-copy .hero-actions .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+  background: #17b6d4;
+  color: #061530;
+  box-shadow: 0 6px 18px rgba(23, 182, 212, 0.35);
+}
+.hero .hero-copy .hero-actions .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(23, 182, 212, 0.45);
+  background: #1cd7fa;
+}
+.hero .hero-copy .hero-actions .btn-primary:active {
+  transform: translateY(0);
+}
+.hero .hero-copy .hero-actions .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+  background: transparent;
+  color: #0b2a52;
+  border-color: rgba(11, 42, 82, 0.45);
+}
+.hero .hero-copy .hero-actions .btn-secondary:hover {
+  border-color: #0b2a52;
+  background: rgba(11, 42, 82, 0.08);
+}
+.hero .hero-art {
+  position: relative;
+  height: 360px;
+}
+.hero .hero-art svg {
+  width: 100%;
+  height: 100%;
+}
+.services {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.services .section-head {
+  max-width: 640px;
+  margin: 0 0 3rem;
+}
+.services .section-head h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1;
+  color: #0b2a52;
+  margin: 0.6rem 0 0.8rem;
+}
+.services .section-head p {
+  color: rgba(14, 33, 54, 0.65);
+  margin: 0;
+}
+.services .services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 780px) {
+  .services .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.services .service-card {
+  background: #ffffff;
+  border: 1px solid rgba(11, 42, 82, 0.12);
+  border-radius: 14px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.services .service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(23, 182, 212, 0.55);
+  box-shadow: 0 16px 30px rgba(11, 42, 82, 0.08);
+}
+.services .service-card .icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 6px;
+  background: rgba(23, 182, 212, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.services .service-card .icon-badge svg {
+  width: 26px;
+  height: 26px;
+}
+.services .service-card h3 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  color: #0b2a52;
+  margin: 0;
+}
+.services .service-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+.services .service-card ul li {
+  font-size: 0.92rem;
+  color: rgba(14, 33, 54, 0.65);
+  padding-left: 1.1rem;
+  position: relative;
+}
+.services .service-card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  background: #17b6d4;
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+.services .service-card .card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+  background: rgba(11, 42, 82, 0.06);
+  color: #0b2a52;
+  border-color: rgba(11, 42, 82, 0.16);
+  padding: 0.65rem 1.3rem;
+  font-size: 0.85rem;
+  align-self: flex-start;
+}
+.services .service-card .card-cta:hover {
+  background: #0b2a52;
+  color: #ffffff;
+}
+.why-us {
+  background: #081f45;
+  background-image: radial-gradient(circle at 15% 20%, rgba(23, 182, 212, 0.1), transparent 40%), radial-gradient(circle at 85% 80%, rgba(20, 86, 163, 0.18), transparent 45%);
+  color: #ffffff;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.why-us .section-head {
+  max-width: 640px;
+  margin: 0 0 3rem;
+}
+.why-us .section-head .eyebrow {
+  color: #7fe3ef;
+}
+.why-us .section-head h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0.6rem 0 0.8rem;
+}
+.why-us .section-head p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+.why-us .why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 900px) {
+  .why-us .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 540px) {
+  .why-us .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.why-us .why-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1.8rem 1.5rem;
+}
+.why-us .why-card .icon-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(23, 182, 212, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.why-us .why-card .icon-badge svg {
+  width: 22px;
+  height: 22px;
+  stroke: #7fe3ef;
+}
+.why-us .why-card h3 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+  color: #ffffff;
+}
+.why-us .why-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
+  line-height: 1.55;
+}
+.contact {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: #f3f8fc;
+}
+.contact .contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+}
+@media (max-width: 860px) {
+  .contact .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.contact .contact-col {
+  background: #ffffff;
+  border: 1px solid rgba(11, 42, 82, 0.12);
+  border-radius: 14px;
+  padding: 2.4rem;
+}
+.contact h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1;
+  color: #0b2a52;
+  margin: 0 0 1.4rem;
+}
+.contact .contact-list {
+  list-style: none;
+  margin: 0 0 1.6rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.contact .contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+.contact .contact-list li .icon-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(23, 182, 212, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact .contact-list li .icon-badge svg {
+  width: 18px;
+  height: 18px;
+}
+.contact .contact-list li a,
+.contact .contact-list li span.addr {
+  font-size: 0.96rem;
+  color: #0e2136;
+  text-decoration: none;
+  line-height: 1.5;
+}
+.contact .contact-list li a:hover {
+  color: #17b6d4;
+}
+.contact .directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+  background: #17b6d4;
+  color: #061530;
+  box-shadow: 0 6px 18px rgba(23, 182, 212, 0.35);
+}
+.contact .directions-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(23, 182, 212, 0.45);
+  background: #1cd7fa;
+}
+.contact .directions-btn:active {
+  transform: translateY(0);
+}
+.contact .qr-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contact .qr-col .qr-frame {
+  background: #ffffff;
+  border: 1px solid rgba(11, 42, 82, 0.12);
+  padding: 1.2rem;
+  border-radius: 14px;
+  margin-bottom: 0.9rem;
+}
+.contact .qr-col .qr-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0b2a52;
+  margin-bottom: 1.6rem;
+}
+.contact .map-frame {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(11, 42, 82, 0.12);
+}
+.contact .map-frame iframe {
+  width: 100%;
+  height: 230px;
+  border: 0;
+  display: block;
+}
+.site-footer {
+  background: #061530;
+  color: rgba(255, 255, 255, 0.78);
+  padding: 3.2rem 0 2rem;
+}
+.site-footer .footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+.site-footer .footer-top .footer-message {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1;
+  color: #ffffff;
+  max-width: 380px;
+}
+.site-footer .footer-top .footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.site-footer .footer-top .footer-contact a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.78);
+}
+.site-footer .footer-top .footer-contact a:hover {
+  color: #7fe3ef;
+}
+.site-footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+@media (max-width: 860px) {
+  .site-header nav.main-nav {
+    display: none;
+  }
+  .site-header .nav-toggle {
+    display: block;
+  }
+  .hero .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero .hero-art {
+    height: 260px;
+    order: -1;
+  }
+}
+body.nav-open .site-header nav.main-nav {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(11, 42, 82, 0.12);
+}
+body.nav-open .site-header nav.main-nav ul {
+  flex-direction: column;
+  gap: 0;
+  padding: 0.5rem 1.75rem 1.25rem;
+}
+body.nav-open .site-header nav.main-nav ul li a {
+  display: block;
+  padding: 0.75rem 0;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Small extras not worth a LESS rule of their own */
+.icon-badge svg { stroke: #0b2a52; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.why-us .icon-badge svg { stroke: #7fe3ef; }
+.contact .icon-badge svg { stroke: #0b6fa3; }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container header-row">
+    <div class="brand">
+      <span class="brand-name">BYTE<span>CARE</span> NJ</span>
+      <span class="brand-tag">Smart Solutions, Reliable Service</span>
+    </div>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#why-us" class="nav-link">Why Us</a></li>
+        <li><a href="#location" class="nav-link">Location</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <div class="status-line">
+        <span class="dot"></span>
+        <span class="eyebrow">Goalpara · Assam — Systems Online</span>
+      </div>
+      <h1>One stop solution for all your tech needs</h1>
+      <p class="lead">Welcome to Bytecare NJ, where technology meets reliable service in Goalpara, Assam. From a cracked screen to a new CCTV setup, we keep your devices — and your business — running.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary">Book a Repair</a>
+        <a href="tel:+919707701954" class="btn-secondary">Call +91 97077 01954</a>
+      </div>
+    </div>
+
+    <div class="hero-art reveal">
+      <!-- Signature element: a circuit trace linking device icons, standing in for the flyer's side panel -->
+      <svg viewBox="0 0 420 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M40 300 H120 V220 H210 V140 H300 V60 H380" stroke="#17b6d4" stroke-width="2" stroke-dasharray="6 6" opacity="0.55"/>
+        <circle cx="40" cy="300" r="5" fill="#7fe3ef"/>
+        <circle cx="120" cy="220" r="5" fill="#7fe3ef"/>
+        <circle cx="210" cy="140" r="5" fill="#7fe3ef"/>
+        <circle cx="300" cy="60" r="5" fill="#7fe3ef"/>
+
+        <!-- laptop -->
+        <g transform="translate(4,268)">
+          <rect x="0" y="0" width="72" height="46" rx="4" fill="#0b2a52"/>
+          <rect x="6" y="6" width="60" height="34" rx="2" fill="#eaf7fb"/>
+          <rect x="-6" y="46" width="84" height="8" rx="2" fill="#123a6b"/>
+        </g>
+
+        <!-- desktop tower -->
+        <g transform="translate(84,178)">
+          <rect x="0" y="0" width="46" height="60" rx="5" fill="#0b2a52"/>
+          <rect x="8" y="10" width="30" height="4" fill="#17b6d4"/>
+          <circle cx="23" cy="46" r="5" fill="#17b6d4"/>
+        </g>
+
+        <!-- printer / photo -->
+        <g transform="translate(174,98)">
+          <rect x="0" y="10" width="66" height="34" rx="4" fill="#0b2a52"/>
+          <rect x="14" y="0" width="38" height="16" rx="2" fill="#123a6b"/>
+          <rect x="16" y="44" width="34" height="22" fill="#ffffff" stroke="#0b2a52" stroke-width="2"/>
+        </g>
+
+        <!-- cctv camera -->
+        <g transform="translate(300,10)">
+          <rect x="0" y="14" width="52" height="20" rx="6" fill="#0b2a52"/>
+          <circle cx="46" cy="24" r="7" fill="#17b6d4"/>
+          <rect x="-6" y="0" width="10" height="18" rx="2" fill="#123a6b"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we fix</span>
+      <h2>Four services, one shop</h2>
+      <p>Everything under one roof in Goalpara — walk in, or book ahead and skip the wait.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Card 1: Laptop Repair -->
+      <article class="service-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 18h20l-1.5 2.5a1 1 0 0 1-.9.5H4.4a1 1 0 0 1-.9-.5L2 18Z"/></svg>
+        </div>
+        <h3>Laptop Repair</h3>
+        <ul>
+          <li>Hardware &amp; software repair</li>
+          <li>Screen replacement</li>
+          <li>Fast &amp; reliable service</li>
+        </ul>
+        <a href="tel:+919707701954" class="card-cta">Book Now</a>
+      </article>
+
+      <!-- Card 2: PC Repair -->
+      <article class="service-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><rect x="4" y="3" width="12" height="15" rx="1.5"/><path d="M8 21h4M10 18v3"/><circle cx="10" cy="8" r="2"/></svg>
+        </div>
+        <h3>PCs Repair</h3>
+        <ul>
+          <li>Desktop upgrades &amp; diagnostics</li>
+          <li>Power supply replacement</li>
+          <li>Virus &amp; malware clean-up</li>
+        </ul>
+        <a href="tel:+919707701954" class="card-cta">Book Now</a>
+      </article>
+
+      <!-- Card 3: Passport Photo Printing -->
+      <article class="service-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.4"/><rect x="7" y="3" width="10" height="4" rx="1"/></svg>
+        </div>
+        <h3>Passport Size Photo Printing</h3>
+        <ul>
+          <li>Hardware &amp; software printing</li>
+          <li>High quality prints</li>
+          <li>Instant printing</li>
+          <li>All size photos available</li>
+        </ul>
+        <a href="#location" class="card-cta">Visit Our Shop</a>
+      </article>
+
+      <!-- Card 4: CCTV Installation -->
+      <article class="service-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><rect x="2" y="9" width="13" height="7" rx="2.5"/><circle cx="12" cy="12.5" r="2.2"/><path d="M15 11l6-3v9l-6-3"/></svg>
+        </div>
+        <h3>CCTV Installation</h3>
+        <ul>
+          <li>CCTV camera installation</li>
+          <li>Remote viewing setup</li>
+          <li>Home | Office | Shop security</li>
+        </ul>
+        <a href="#contact" class="card-cta">Request a Site Survey</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="why-us" id="why-us">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Goalpara trusts us</span>
+      <h2>Why Choose Bytecare NJ</h2>
+      <p>Four reasons customers come back to us instead of shipping devices out of town.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Expert Technicians</h3>
+        <p>Trusted &amp; experienced hands on every laptop, PC and camera that comes through the door.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9c.2.6.7 1.2 1.5 1.3h.1a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
+        </div>
+        <h3>Quality Service</h3>
+        <p>We use genuine parts — no shortcuts, so repairs last and warranties mean something.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        </div>
+        <h3>Fast Turnaround</h3>
+        <p>Quick &amp; efficient diagnostics mean most repairs go out the same day.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><path d="M8 12l3 3 5-6"/><path d="M2 12h4l2 3 3-6 2 4h5"/></svg>
+        </div>
+        <h3>Customer Satisfaction</h3>
+        <p>Our first priority — every job, from a screen swap to a full CCTV install.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT + LOCATION ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Column 1: Reach Us -->
+      <div class="contact-col reveal" id="location">
+        <h2>Contact Bytecare NJ</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <a href="tel:+919707701954">+91 97077 01954</a>
+          </li>
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <a href="tel:+918638594006">+91 86385 94006</a>
+          </li>
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 4h16v16H4V4Z" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 6l8 7 8-7" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <a href="mailto:bezbaruah.jyotimoni1@gmail.com">bezbaruah.jyotimoni1@gmail.com</a>
+          </li>
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.3" stroke="#0b6fa3" fill="none" stroke-width="1.7"/></svg></span>
+            <span class="addr">Goalpara Guwahati Rd, Bullapar, VIP, 1st floor, Near Basuda Sweet, Goalpara, Assam 781015</span>
+          </li>
+        </ul>
+        <a class="directions-btn" href="https://www.google.com/maps/search/?api=1&query=Goalpara+Guwahati+Rd%2C+Bullapar%2C+VIP%2C+Goalpara%2C+Assam+781015" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+
+      <!-- Column 2: Scan for Location -->
+      <div class="contact-col qr-col reveal">
+        <h2>Scan to Find Us</h2>
+        <div class="qr-frame">
+          <!-- Stylised QR placeholder — swap the pattern block for the flyer's real QR export -->
+          <svg width="150" height="150" viewBox="0 0 150 150" aria-label="QR code placeholder">
+            <rect width="150" height="150" fill="#fff"/>
+            <g fill="#0b2a52">
+              <rect x="10" y="10" width="34" height="34"/><rect x="18" y="18" width="18" height="18" fill="#fff"/><rect x="24" y="24" width="6" height="6" fill="#0b2a52"/>
+              <rect x="106" y="10" width="34" height="34"/><rect x="114" y="18" width="18" height="18" fill="#fff"/><rect x="120" y="24" width="6" height="6" fill="#0b2a52"/>
+              <rect x="10" y="106" width="34" height="34"/><rect x="18" y="114" width="18" height="18" fill="#fff"/><rect x="24" y="120" width="6" height="6" fill="#0b2a52"/>
+              <rect x="52" y="10" width="6" height="6"/><rect x="64" y="10" width="6" height="6"/><rect x="76" y="16" width="6" height="6"/><rect x="52" y="28" width="6" height="6"/>
+              <rect x="52" y="52" width="6" height="6"/><rect x="64" y="52" width="6" height="6"/><rect x="76" y="52" width="6" height="6"/><rect x="88" y="52" width="6" height="6"/>
+              <rect x="52" y="64" width="6" height="6"/><rect x="70" y="64" width="6" height="6"/><rect x="88" y="64" width="6" height="6"/>
+              <rect x="52" y="76" width="6" height="6"/><rect x="64" y="76" width="6" height="6"/><rect x="82" y="76" width="6" height="6"/>
+              <rect x="58" y="88" width="6" height="6"/><rect x="70" y="88" width="6" height="6"/><rect x="88" y="88" width="6" height="6"/>
+              <rect x="106" y="52" width="6" height="6"/><rect x="118" y="52" width="6" height="6"/><rect x="130" y="58" width="6" height="6"/>
+              <rect x="106" y="70" width="6" height="6"/><rect x="124" y="70" width="6" height="6"/>
+              <rect x="106" y="82" width="6" height="6"/><rect x="118" y="88" width="6" height="6"/><rect x="130" y="82" width="6" height="6"/>
+              <rect x="52" y="106" width="6" height="6"/><rect x="64" y="112" width="6" height="6"/><rect x="76" y="106" width="6" height="6"/>
+              <rect x="52" y="124" width="6" height="6"/><rect x="70" y="130" width="6" height="6"/><rect x="88" y="124" width="6" height="6"/>
+              <rect x="106" y="106" width="6" height="6"/><rect x="118" y="112" width="6" height="6"/><rect x="130" y="118" width="6" height="6"/><rect x="112" y="130" width="6" height="6"/><rect x="124" y="130" width="6" height="6"/>
+            </g>
+          </svg>
+        </div>
+        <span class="qr-label">Scan For Location</span>
+
+        <div class="map-frame">
+          <iframe
+            title="Bytecare NJ Technology location map"
+            src="https://www.google.com/maps?q=Goalpara+Guwahati+Rd,+Bullapar,+VIP,+Goalpara,+Assam+781015&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-message">We Care for Your TECHNOLOGY.</div>
+    <div class="footer-contact">
+      <a href="tel:+919707701954">+91 97077 01954</a>
+      <a href="mailto:bezbaruah.jyotimoni1@gmail.com">bezbaruah.jyotimoni1@gmail.com</a>
+      <span>Goalpara Guwahati Rd, Bullapar, VIP, 1st floor, Near Basuda Sweet, Goalpara, Assam 781015</span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2024 Bytecare NJ Technology. All rights reserved.</span>
+    <span>Goalpara, Assam</span>
+  </div>
+</footer>
+
+<script>
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+navToggle.addEventListener('click', () => {
+  const open = document.body.classList.toggle('nav-open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+
+// Close mobile nav after tapping a link
+document.querySelectorAll('#mainNav a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.body.classList.remove('nav-open');
+  });
+});
+
+// Active nav link on scroll
+const sections = ['services', 'why-us', 'location', 'contact'].map(id => document.getElementById(id)).filter(Boolean);
+const navLinks = document.querySelectorAll('.nav-link');
+const setActive = () => {
+  let current = '';
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= 120) current = sec.id;
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+};
+window.addEventListener('scroll', setActive);
+setActive();
+
+// Scroll-reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

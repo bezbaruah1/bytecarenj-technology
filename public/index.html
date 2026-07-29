@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bytecare NJ Technology — Goalpara, Assam | Repair, Photo Printing & CCTV</title>
+  <meta name="description" content="Bytecare NJ Technology — laptop repair, PC repair, passport photo printing and CCTV installation in Goalpara, Assam. Track your repair status online!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container header-row">
+    <a href="#" class="brand">
+      <span class="brand-name">BYTE<span>CARE</span> NJ</span>
+      <span class="brand-tag">Smart Solutions, Reliable Service</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery" class="nav-link">Workshop Gallery</a></li>
+        <li><a href="#track" class="nav-link">Track Repair</a></li>
+        <li><a href="#why-us" class="nav-link">Why Us</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#location" class="nav-link">Location &amp; Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn-primary btn-sm" id="openBookingBtn">Book Repair / Survey</button>
+      <a href="/admin.html" class="btn-secondary btn-sm" title="Shop Admin Login">Admin Portal</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="status-line">
+        <span class="dot"></span>
+        <span class="eyebrow">Goalpara · Assam — Systems Online</span>
+      </div>
+      <h1>One stop solution for all your tech needs</h1>
+      <p class="lead">Welcome to Bytecare NJ, where technology meets reliable service in Goalpara, Assam. From laptop screen replacements to CCTV setups and instant passport photos, we keep your devices and business running smoothly.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="openBookingModal()">Book a Repair</button>
+        <a href="#track" class="btn-secondary">Track Status</a>
+        <a href="tel:+919707701954" class="btn-secondary">Call +91 97077 01954</a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <svg viewBox="0 0 420 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M40 300 H120 V220 H210 V140 H300 V60 H380" stroke="#17b6d4" stroke-width="2" stroke-dasharray="6 6" opacity="0.55"/>
+        <circle cx="40" cy="300" r="5" fill="#7fe3ef"/>
+        <circle cx="120" cy="220" r="5" fill="#7fe3ef"/>
+        <circle cx="210" cy="140" r="5" fill="#7fe3ef"/>
+        <circle cx="300" cy="60" r="5" fill="#7fe3ef"/>
+
+        <!-- Laptop -->
+        <g transform="translate(4,268)">
+          <rect x="0" y="0" width="72" height="46" rx="4" fill="#0b2a52"/>
+          <rect x="6" y="6" width="60" height="34" rx="2" fill="#eaf7fb"/>
+          <rect x="-6" y="46" width="84" height="8" rx="2" fill="#123a6b"/>
+        </g>
+        <!-- Desktop -->
+        <g transform="translate(84,178)">
+          <rect x="0" y="0" width="46" height="60" rx="5" fill="#0b2a52"/>
+          <rect x="8" y="10" width="30" height="4" fill="#17b6d4"/>
+          <circle cx="23" cy="46" r="5" fill="#17b6d4"/>
+        </g>
+        <!-- Photo Printer -->
+        <g transform="translate(174,98)">
+          <rect x="0" y="10" width="66" height="34" rx="4" fill="#0b2a52"/>
+          <rect x="14" y="0" width="38" height="16" rx="2" fill="#123a6b"/>
+          <rect x="16" y="44" width="34" height="22" fill="#ffffff" stroke="#0b2a52" stroke-width="2"/>
+        </g>
+        <!-- CCTV Camera -->
+        <g transform="translate(300,10)">
+          <rect x="0" y="14" width="52" height="20" rx="6" fill="#0b2a52"/>
+          <circle cx="46" cy="24" r="7" fill="#17b6d4"/>
+          <rect x="-6" y="0" width="10" height="18" rx="2" fill="#123a6b"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REPAIR TRACKER WIDGET ============ -->
+<section class="tracker-section" id="track">
+  <div class="container">
+    <div class="tracker-card">
+      <div class="tracker-header">
+        <div>
+          <span class="eyebrow" style="color: #7fe3ef;">Live Service Portal</span>
+          <h2>Track Your Repair Status</h2>
+          <p>Enter your Tracking ID (e.g. <code>BC-8942-GLP</code>) or Mobile Phone Number below:</p>
+        </div>
+        <div>
+          <button class="btn-primary btn-sm" onclick="trackSample('BC-8942-GLP')">Try Demo ID: BC-8942-GLP</button>
+        </div>
+      </div>
+
+      <form id="trackerForm" class="tracker-form">
+        <div class="tracker-input-group">
+          <input type="text" id="trackInput" class="tracker-input" placeholder="Tracking ID or 10-digit Phone..." required>
+        </div>
+        <button type="submit" class="btn-primary">Track Status</button>
+      </form>
+
+      <!-- Results Container -->
+      <div id="trackerResult" style="display: none;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Core Solutions</span>
+      <h2>Four services, one expert shop</h2>
+      <p>Everything under one roof in Goalpara — walk in anytime, or book online to skip the wait.</p>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+      <article class="service-card">
+        <div class="service-img-wrapper">
+          <img src="/images/cracked-screen.jpg" alt="Lenovo ThinkPad Cracked Screen Repair at Bytecare NJ Goalpara">
+          <span class="service-img-tag">Goalpara Bench — Screen Swap</span>
+        </div>
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 18h20l-1.5 2.5a1 1 0 0 1-.9.5H4.4a1 1 0 0 1-.9-.5L2 18Z"/></svg>
+        </div>
+        <h3>Laptop Repair</h3>
+        <ul>
+          <li>Screen &amp; LCD panel replacement</li>
+          <li>Motherboard chip repair &amp; liquid restoration</li>
+          <li>Battery, keyboard &amp; charger replacement</li>
+        </ul>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+          <span class="price-tag">From ₹499</span>
+          <button class="btn-secondary btn-sm" onclick="openBookingModal('Laptop Repair')">Book Now</button>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-img-wrapper">
+          <img src="/images/pc-rgb-workbench.jpg" alt="PC Diagnostics & RGB Workbench at Bytecare NJ Technology">
+          <span class="service-img-tag">Custom Rig &amp; SMPS Workbench</span>
+        </div>
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><rect x="4" y="3" width="12" height="15" rx="1.5"/><path d="M8 21h4M10 18v3"/><circle cx="10" cy="8" r="2"/></svg>
+        </div>
+        <h3>PCs Repair</h3>
+        <ul>
+          <li>Desktop SMPS &amp; power supply replacement</li>
+          <li>Virus, malware &amp; ransomware removal</li>
+          <li>Custom gaming &amp; office PC upgrades</li>
+        </ul>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+          <span class="price-tag">From ₹399</span>
+          <button class="btn-secondary btn-sm" onclick="openBookingModal('PC Repair')">Book Now</button>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-img-wrapper">
+          <img src="/images/storage-ram-upgrade.jpg" alt="SSD and RAM Upgrade Service at Bytecare NJ">
+          <span class="service-img-tag">High Speed SSD &amp; RAM Upgrade</span>
+        </div>
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.4"/><rect x="7" y="3" width="10" height="4" rx="1"/></svg>
+        </div>
+        <h3>Passport Size Photo Printing</h3>
+        <ul>
+          <li>Instant high-gloss photo printing (5 mins)</li>
+          <li>All official passport, visa &amp; Govt size specs</li>
+          <li>Digital soft-copy sent straight to WhatsApp</li>
+        </ul>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+          <span class="price-tag">From ₹99 (8 Copies)</span>
+          <button class="btn-secondary btn-sm" onclick="openBookingModal('Passport Photo Printing')">Order Print</button>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-img-wrapper">
+          <img src="/images/desktop-motherboard.jpg" alt="CCTV Camera Setup & Security Systems in Goalpara">
+          <span class="service-img-tag">HD CCTV &amp; Security Setup</span>
+        </div>
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24"><rect x="2" y="9" width="13" height="7" rx="2.5"/><circle cx="12" cy="12.5" r="2.2"/><path d="M15 11l6-3v9l-6-3"/></svg>
+        </div>
+        <h3>CCTV Installation</h3>
+        <ul>
+          <li>Free on-site security survey in Goalpara</li>
+          <li>Full HD / 4K IP camera &amp; DVR/NVR setup</li>
+          <li>Remote live viewing on iPhone &amp; Android</li>
+        </ul>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+          <span class="price-tag">Free Site Survey</span>
+          <button class="btn-secondary btn-sm" onclick="openBookingModal('CCTV Installation')">Request Survey</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKSHOP GALLERY SECTION ============ -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color: #7fe3ef;">Real Repairs, Real Experience</span>
+      <h2>Inside Bytecare NJ Workshop</h2>
+      <p>Actual photos from our repair workbench in Goalpara, Assam — hardware diagnostics, chip-level soldering, screen replacements &amp; custom PC builds.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="/images/cracked-screen.jpg" alt="Cracked ThinkPad Display Screen Replacement">
+        <div class="gallery-overlay">
+          <div class="title">Screen Replacement</div>
+          <div class="sub">Lenovo ThinkPad FHD panel swap</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/dell-motherboard.jpg" alt="Dell Laptop Chip-Level Motherboard Repair">
+        <div class="gallery-overlay">
+          <div class="title">Chip-Level Repair</div>
+          <div class="sub">Dell motherboard copper heatsink rebuild</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/pc-rgb-workbench.jpg" alt="PC RGB Cooler Fan & Workbench Testing">
+        <div class="gallery-overlay">
+          <div class="title">Custom PC Workbench</div>
+          <div class="sub">RGB cooler &amp; SMPS voltage testing</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/technician-desk.jpg" alt="Lead Technician Jyotimoni Bezbaruah at Bytecare NJ Repair Desk">
+        <div class="gallery-overlay">
+          <div class="title">Goalpara Repair Counter</div>
+          <div class="sub">Jyotimoni Bezbaruah at repair desk</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/storage-ram-upgrade.jpg" alt="1TB Western Digital Hard Drive & RAM Installation">
+        <div class="gallery-overlay">
+          <div class="title">Storage &amp; RAM Upgrade</div>
+          <div class="sub">WD 1TB HDD &amp; DDR4 RAM upgrade</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/laptop-hinge.jpg" alt="Laptop Keyboard & Hinge Fabrication">
+        <div class="gallery-overlay">
+          <div class="title">Hinge &amp; Body Fabrication</div>
+          <div class="sub">Loose hinge alignment &amp; keyboard repair</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/desktop-motherboard.jpg" alt="Lenovo Desktop Workstation Motherboard Setup">
+        <div class="gallery-overlay">
+          <div class="title">Desktop PC Overhaul</div>
+          <div class="sub">Workstation tower fan &amp; motherboard overhaul</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/hp-disassembly.jpg" alt="HP ProBook Laptop Motherboard Diagnostic">
+        <div class="gallery-overlay">
+          <div class="title">HP ProBook Diagnostics</div>
+          <div class="sub">Full motherboard cleanup &amp; thermal paste refresh</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="why-us" id="why-us">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color: #7fe3ef;">Why Goalpara Trusts Us</span>
+      <h2>Why Choose Bytecare NJ</h2>
+      <p>Four reasons local businesses and residents rely on us for fast, genuine service.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Expert Technicians</h3>
+        <p>Trusted &amp; experienced hands on every laptop, PC, and camera that comes through our doors.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9c.2.6.7 1.2 1.5 1.3h.1a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></div>
+        <h3>Quality Genuine Parts</h3>
+        <p>We use OEM certified spare parts — no cheap knockoffs, so your repairs last with full warranty.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3>Fast Turnaround</h3>
+        <p>Same-day diagnostic and express repairs keep your downtime to an absolute minimum.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 12l3 3 5-6"/><path d="M2 12h4l2 3 3-6 2 4h5"/></svg></div>
+        <h3>Complete Satisfaction</h3>
+        <p>Every single repair comes with quality assurance check before handing your device back.</p>
+      </div>
+    </div>
+
+    <!-- Lead Technician Profile Banner -->
+    <div class="tech-profile-card">
+      <div class="tech-avatar">
+        <img src="/images/technician-desk.jpg" alt="Jyotimoni Bezbaruah - Lead Technician Bytecare NJ Goalpara">
+      </div>
+      <div class="tech-info">
+        <h4>Meet Jyotimoni Bezbaruah</h4>
+        <p>Lead Hardware Technician &amp; Founder at Bytecare NJ Technology — Goalpara, Assam</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS SECTION ============ -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-head" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <span class="eyebrow">Customer Feedback</span>
+        <h2>What Our Clients Say</h2>
+        <p>Verified reviews from local customers across Goalpara &amp; surrounding areas.</p>
+      </div>
+      <button class="btn-secondary" onclick="openReviewModal()">Write a Review</button>
+    </div>
+
+    <div class="reviews-grid" id="reviewsGrid">
+      <!-- Reviews loaded via app.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT & LOCATION ============ -->
+<section class="contact" id="location">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Column 1: Contact Details & Form -->
+      <div class="contact-col">
+        <h2>Contact Bytecare NJ</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z" stroke="#0b2a52" fill="none" stroke-width="1.8"/></svg></span>
+            <div>
+              <strong>Primary Phone:</strong><br>
+              <a href="tel:+919707701954">+91 97077 01954</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z" stroke="#0b2a52" fill="none" stroke-width="1.8"/></svg></span>
+            <div>
+              <strong>Secondary Contact:</strong><br>
+              <a href="tel:+918638594006">+91 86385 94006</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 4h16v16H4V4Z" stroke="#0b2a52" fill="none" stroke-width="1.8"/><path d="M4 6l8 7 8-7" stroke="#0b2a52" fill="none" stroke-width="1.8"/></svg></span>
+            <div>
+              <strong>Email Address:</strong><br>
+              <a href="mailto:bezbaruah.jyotimoni1@gmail.com">bezbaruah.jyotimoni1@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="#0b2a52" fill="none" stroke-width="1.8"/><circle cx="12" cy="9" r="2.3" stroke="#0b2a52" fill="none" stroke-width="1.8"/></svg></span>
+            <div>
+              <strong>Shop Address:</strong><br>
+              <span class="addr">Goalpara Guwahati Rd, Bullapar, VIP, 1st floor, Near Basuda Sweet, Goalpara, Assam 781015</span>
+            </div>
+          </li>
+        </ul>
+
+        <a class="btn-primary" style="width: 100%; justify-content: center;" href="https://www.google.com/maps/search/?api=1&query=Goalpara+Guwahati+Rd%2C+Bullapar%2C+VIP%2C+Goalpara%2C+Assam+781015" target="_blank" rel="noopener">
+          Get Google Maps Directions
+        </a>
+      </div>
+
+      <!-- Column 2: Send Message & Map -->
+      <div class="contact-col qr-col">
+        <h2 style="width: 100%; text-align: left;">Send Us a Message</h2>
+        <form id="contactForm" style="width: 100%; text-align: left;">
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" class="form-control" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Phone Number</label>
+            <input type="tel" id="contactPhone" class="form-control" placeholder="10-digit mobile number" required>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message / Inquiry</label>
+            <textarea id="contactMessage" class="form-control" rows="3" placeholder="How can we help you today?" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Send Inquiry</button>
+        </form>
+
+        <div class="map-frame" style="margin-top: 1.8rem;">
+          <iframe
+            title="Bytecare NJ Technology location map"
+            src="https://www.google.com/maps?q=Goalpara+Guwahati+Rd,+Bullapar,+VIP,+Goalpara,+Assam+781015&output=embed"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-message">We Care for Your TECHNOLOGY.</div>
+    <div class="footer-contact">
+      <a href="tel:+919707701954">+91 97077 01954</a> | <a href="tel:+918638594006">+91 86385 94006</a>
+      <a href="mailto:bezbaruah.jyotimoni1@gmail.com">bezbaruah.jyotimoni1@gmail.com</a>
+      <span>Goalpara Guwahati Rd, Bullapar, VIP, 1st floor, Near Basuda Sweet, Goalpara, Assam 781015</span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Bytecare NJ Technology. All rights reserved.</span>
+    <span>Goalpara, Assam</span>
+  </div>
+</footer>
+
+<!-- ============ MODALS ============ -->
+
+<!-- 1. Booking / Service Request Modal -->
+<div class="modal-backdrop" id="bookingModal">
+  <div class="modal-window">
+    <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+    <h2 style="font-family: var(--font-title); color: var(--color-navy-brand); margin-top: 0;">Book Service / Request Survey</h2>
+    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Fill out your service details and our Goalpara team will confirm your slot and assign a tracking ticket.</p>
+
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="bookService">Service Type</label>
+        <select id="bookService" class="form-control" required>
+          <option value="Laptop Repair">Laptop Repair</option>
+          <option value="PC Repair">PC Repair</option>
+          <option value="Passport Photo Printing">Passport Size Photo Printing</option>
+          <option value="CCTV Installation">CCTV Installation &amp; Survey</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="bookName">Customer Full Name *</label>
+        <input type="text" id="bookName" class="form-control" placeholder="e.g. Jyotirmoy Das" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bookPhone">Mobile Phone Number *</label>
+        <input type="tel" id="bookPhone" class="form-control" placeholder="10-digit mobile number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bookEmail">Email Address (Optional)</label>
+        <input type="email" id="bookEmail" class="form-control" placeholder="name@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="bookDevice">Device Model / Equipment Details</label>
+        <input type="text" id="bookDevice" class="form-control" placeholder="e.g. Dell Inspiron 15 / 4 Camera Security setup">
+      </div>
+
+      <div class="form-group">
+        <label for="bookProblem">Problem / Requirement Description</label>
+        <textarea id="bookProblem" class="form-control" rows="3" placeholder="Describe issue (e.g. Broken screen, CCTV survey requested, photo size requested)"></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%;">Submit Booking &amp; Get Ticket</button>
+    </form>
+  </div>
+</div>
+
+<!-- 2. Write Review Modal -->
+<div class="modal-backdrop" id="reviewModal">
+  <div class="modal-window">
+    <button class="modal-close" onclick="closeReviewModal()">&times;</button>
+    <h2 style="font-family: var(--font-title); color: var(--color-navy-brand); margin-top: 0;">Write a Customer Review</h2>
+    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Share your experience with Bytecare NJ Technology in Goalpara.</p>
+
+    <form id="reviewForm">
+      <div class="form-group">
+        <label for="revName">Your Name *</label>
+        <input type="text" id="revName" class="form-control" placeholder="e.g. Anupam Medhi" required>
+      </div>
+
+      <div class="form-group">
+        <label for="revLocation">Location / Area</label>
+        <input type="text" id="revLocation" class="form-control" placeholder="e.g. Goalpara Town / Agia" value="Goalpara">
+      </div>
+
+      <div class="form-group">
+        <label for="revService">Service Received</label>
+        <select id="revService" class="form-control">
+          <option value="Laptop Repair">Laptop Repair</option>
+          <option value="PC Repair">PC Repair</option>
+          <option value="Passport Photo Printing">Passport Photo Printing</option>
+          <option value="CCTV Installation">CCTV Installation</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="revRating">Rating (1 to 5 Stars)</label>
+        <select id="revRating" class="form-control">
+          <option value="5">⭐⭐⭐⭐⭐ (5 Stars - Excellent)</option>
+          <option value="4">⭐⭐⭐⭐ (4 Stars - Good)</option>
+          <option value="3">⭐⭐⭐ (3 Stars - Average)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="revComment">Your Review *</label>
+        <textarea id="revComment" class="form-control" rows="3" placeholder="Tell us about your experience..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%;">Submit Review</button>
+    </form>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
