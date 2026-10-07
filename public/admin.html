@@ -3,72 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop Admin Portal — Bytecare NJ Technology</title>
+  <title>Shop Admin Portal — Bytecare NJ Technology | Kamrup (R)</title>
+  <link rel="icon" type="image/png" href="/images/bytecare-logo.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/bytecare-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('bytecare-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <style>
-    body { background: var(--color-bg-light); min-height: 100vh; }
+    body { background: var(--color-bg-light); min-height: 100vh; color: var(--color-text-main); }
     .admin-header {
       background: var(--color-navy-darkest);
       color: #ffffff;
       padding: 1rem 0;
       border-bottom: 2px solid var(--color-primary);
+      position: sticky;
+      top: 0;
+      z-index: 90;
     }
     .admin-header .container {
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem;
     }
     .admin-title {
       font-family: var(--font-title); font-size: 1.3rem; font-weight: 700;
+      display: flex; align-items: center; gap: 0.5rem;
     }
     .admin-title span { color: var(--color-primary); }
+    .admin-header-actions { display: flex; align-items: center; gap: 0.6rem; }
 
     /* Login Box */
     .login-container {
-      max-width: 420px;
-      margin: 5rem auto;
-      background: #ffffff;
+      max-width: 440px;
+      margin: 4.5rem auto;
+      background: var(--color-bg-card);
       border-radius: 14px;
       padding: 2.5rem;
       border: 1px solid var(--color-border);
-      box-shadow: 0 16px 36px rgba(11, 42, 82, 0.08);
+      box-shadow: 0 16px 36px rgba(11, 42, 82, 0.12);
     }
 
     /* Dashboard Layout */
-    .dashboard-container { display: none; padding: 2.5rem 0; }
+    .dashboard-container { display: none; padding: 2rem 0 3.5rem; }
     .stats-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2.5rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;
     }
     .stat-card {
-      background: #ffffff; border-radius: 12px; padding: 1.5rem;
+      background: var(--color-bg-card); border-radius: 12px; padding: 1.4rem;
       border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
     }
     .stat-card h4 {
-      font-size: 0.82rem; text-transform: uppercase; font-family: var(--font-mono);
+      font-size: 0.8rem; text-transform: uppercase; font-family: var(--font-mono);
       color: var(--color-text-muted); margin: 0 0 0.5rem;
     }
     .stat-card .val {
       font-family: var(--font-title); font-size: 2.2rem; font-weight: 700; color: var(--color-navy-brand);
     }
+    [data-theme="dark"] .stat-card .val { color: var(--color-primary); }
 
     /* Tabs */
     .admin-tabs {
-      display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-border);
+      display: flex; gap: 0.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-border);
+      overflow-x: auto; padding-bottom: 2px;
     }
     .tab-btn {
-      padding: 0.8rem 1.4rem; font-weight: 600; font-family: var(--font-body);
+      padding: 0.8rem 1.2rem; font-weight: 600; font-family: var(--font-body); font-size: 0.92rem;
       background: none; border: none; cursor: pointer; color: var(--color-text-muted);
-      border-bottom: 3px solid transparent; margin-bottom: -2px;
+      border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap;
+      transition: all 0.2s ease;
     }
+    .tab-btn:hover { color: var(--color-text-main); }
     .tab-btn.active {
-      color: var(--color-navy-brand); border-bottom-color: var(--color-primary);
+      color: var(--color-primary); border-bottom-color: var(--color-primary);
     }
 
     /* Tables */
     .data-table-card {
-      background: #ffffff; border-radius: 12px; border: 1px solid var(--color-border);
-      overflow-x: auto; padding: 1rem;
+      background: var(--color-bg-card); border-radius: 12px; border: 1px solid var(--color-border);
+      overflow-x: auto; padding: 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.04);
     }
     table.admin-table {
       width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;
@@ -78,15 +99,74 @@
       font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase;
       color: var(--color-navy-brand); border-bottom: 2px solid var(--color-border);
     }
+    [data-theme="dark"] table.admin-table th { color: var(--color-primary); }
     table.admin-table td {
       padding: 1rem; border-bottom: 1px solid var(--color-border); vertical-align: top;
     }
     .notes-input {
-      width: 100%; min-width: 180px; font-size: 0.82rem; padding: 0.4rem;
-      border: 1px solid var(--color-border); border-radius: 4px;
+      width: 100%; min-width: 180px; font-size: 0.82rem; padding: 0.5rem;
+      border: 1px solid var(--color-border); border-radius: 6px;
+      background: var(--color-bg-card); color: var(--color-text-main);
     }
     .status-select {
-      font-weight: 600; font-size: 0.85rem; padding: 0.4rem 0.6rem; border-radius: 6px;
+      font-weight: 600; font-size: 0.85rem; padding: 0.45rem 0.6rem; border-radius: 6px;
+      background: var(--color-bg-card); color: var(--color-text-main); border: 1px solid var(--color-border);
+    }
+
+    /* Service Cards in Admin */
+    .service-admin-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;
+    }
+    .service-admin-card {
+      background: var(--color-bg-card); border-radius: 12px; border: 1px solid var(--color-border);
+      padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .service-admin-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      border-bottom: 1px solid var(--color-border); padding-bottom: 0.8rem;
+    }
+    .service-badge {
+      font-size: 0.7rem; font-family: var(--font-mono); padding: 0.2rem 0.5rem; border-radius: 4px;
+      background: rgba(23, 182, 212, 0.15); color: var(--color-primary); font-weight: 600;
+    }
+    .service-img-preview-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.6rem;
+    }
+    .service-thumb-wrap {
+      position: relative; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden;
+      border: 1px solid var(--color-border); background: #061530;
+    }
+    .service-thumb-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .thumb-delete-btn {
+      position: absolute; top: 3px; right: 3px; width: 22px; height: 22px;
+      border-radius: 50%; background: rgba(239, 68, 68, 0.9); color: white;
+      border: none; cursor: pointer; font-size: 13px; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .thumb-delete-btn:hover { background: #dc2626; transform: scale(1.1); }
+    .thumb-primary-tag {
+      position: absolute; bottom: 2px; left: 2px; font-size: 0.6rem; font-family: var(--font-mono);
+      background: rgba(0,0,0,0.7); color: #7fe3ef; padding: 1px 4px; border-radius: 3px;
+    }
+    .add-img-row {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.4rem;
+    }
+
+    /* Owner Card Admin */
+    .owner-admin-card {
+      background: var(--color-bg-card); border-radius: 14px; border: 1px solid var(--color-border);
+      padding: 2rem; max-width: 720px; box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+    .owner-preview-flex {
+      display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap;
+    }
+    .owner-avatar-preview {
+      width: 110px; height: 110px; border-radius: 50%; object-fit: cover; object-position: center 20%;
+      border: 3px solid var(--color-primary); box-shadow: 0 0 16px var(--color-primary-glow);
+      background: var(--color-navy-darkest);
     }
   </style>
 </head>
@@ -96,9 +176,19 @@
 <header class="admin-header">
   <div class="container">
     <div class="admin-title">
-      BYTE<span>CARE</span> NJ — Shop Admin Dashboard
+      <img src="/images/bytecare-logo.png" alt="Bytecare Logo" style="height:38px; width:auto; border-radius:6px; background:#ffffff; padding:2px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+      <span>Shop Admin Dashboard</span>
+      <span class="service-badge">Kamrup (R)</span>
+      <span id="firebaseStatusBadge" class="service-badge" style="background:rgba(245,158,11,0.18); color:#f59e0b; border:1px solid rgba(245,158,11,0.4);" title="Cloud Database Connection Status">
+        DB: Local Standby
+      </span>
     </div>
-    <div>
+    <div class="admin-header-actions">
+      <!-- Dark / Light Mode Toggle -->
+      <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light / Dark mode" title="Toggle Light / Dark mode">
+        <span class="toggle-icon-sun" aria-hidden="true">☀️</span>
+        <span class="toggle-icon-moon" aria-hidden="true">🌙</span>
+      </button>
       <a href="/" class="btn-secondary btn-sm" style="color:#fff; border-color:rgba(255,255,255,0.4);">View Live Website</a>
       <button class="btn-primary btn-sm" id="logoutBtn" style="display:none; margin-left:0.5rem;" onclick="logoutAdmin()">Logout</button>
     </div>
@@ -109,7 +199,7 @@
   <!-- Login Section -->
   <div class="login-container" id="loginBox">
     <h2 style="font-family: var(--font-title); color: var(--color-navy-brand); margin-top: 0;">Shop Admin Authentication</h2>
-    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Enter administrator password to access shop ticket management &amp; reviews.</p>
+    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Enter administrator password to access shop ticket management, services media, and reviews.</p>
 
     <form id="adminLoginForm">
       <div class="form-group">
@@ -147,14 +237,16 @@
 
     <!-- Tabs -->
     <div class="admin-tabs">
-      <button class="tab-btn active" onclick="switchTab('tickets')">Repair &amp; Survey Tickets</button>
-      <button class="tab-btn" onclick="switchTab('contacts')">Contact Inquiries</button>
-      <button class="tab-btn" onclick="switchTab('reviews')">Review Moderation</button>
+      <button class="tab-btn active" onclick="switchTab('tickets', event)">Repair &amp; Survey Tickets</button>
+      <button class="tab-btn" onclick="switchTab('services', event)">Services &amp; Images (CCTV, Photos, Laptops, PCs)</button>
+      <button class="tab-btn" onclick="switchTab('owner', event)">Owner Profile (Why Us Section)</button>
+      <button class="tab-btn" onclick="switchTab('contacts', event)">Contact Inquiries</button>
+      <button class="tab-btn" onclick="switchTab('reviews', event)">Review Moderation</button>
     </div>
 
     <!-- Tab 1: Tickets Table -->
     <div id="tabTickets" class="tab-content">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
         <h3 style="margin:0; font-family:var(--font-title); color:var(--color-navy-brand);">Repair &amp; CCTV Job Tickets</h3>
         <div>
           <button class="btn-secondary btn-sm" onclick="loadDashboard()">Refresh Data</button>
@@ -182,7 +274,79 @@
       </div>
     </div>
 
-    <!-- Tab 2: Contacts Table -->
+    <!-- Tab 2: Services & Images Manager -->
+    <div id="tabServices" class="tab-content" style="display:none;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; flex-wrap:wrap; gap:0.5rem;">
+        <div>
+          <h3 style="margin:0; font-family:var(--font-title); color:var(--color-navy-brand);">Services &amp; Multi-Image Gallery Manager</h3>
+          <p style="margin:0.2rem 0 0; font-size:0.85rem; color:var(--color-text-muted);">
+            Add multiple showcase images for each service. Supports dedicated related photos for CCTV and Passport Size Photo printing sections.
+          </p>
+        </div>
+        <button class="btn-secondary btn-sm" onclick="loadServicesAdmin()">Refresh Services</button>
+      </div>
+
+      <div class="service-admin-grid" id="servicesAdminContainer">
+        <!-- Loaded by admin.js -->
+      </div>
+    </div>
+
+    <!-- Tab 3: Owner Profile Manager -->
+    <div id="tabOwner" class="tab-content" style="display:none;">
+      <div style="margin-bottom:1.2rem;">
+        <h3 style="margin:0; font-family:var(--font-title); color:var(--color-navy-brand);">Owner Profile Manager (Why Us Section)</h3>
+        <p style="margin:0.2rem 0 0; font-size:0.85rem; color:var(--color-text-muted);">
+          Update owner / lead technician portrait, full name, role, and bio displayed in the "Why Choose Bytecare NJ" section.
+        </p>
+      </div>
+
+      <div class="owner-admin-card">
+        <form id="ownerProfileForm">
+          <div class="owner-preview-flex">
+            <img src="/images/jyotimoni-passport.jpeg" alt="Owner Preview" id="ownerPreviewImg" class="owner-avatar-preview">
+            <div>
+              <strong id="ownerPreviewName">Jyotimoni Bezbaruah</strong><br>
+              <span style="font-size:0.85rem; color:var(--color-primary);" id="ownerPreviewRole">Lead Hardware Technician &amp; Founder</span><br>
+              <span style="font-size:0.75rem; color:var(--color-text-muted);">Bytecare NJ Technology — Kamrup (R), Assam</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ownerImgInput">Owner Image URL or Preset Asset</label>
+            <div style="display:flex; gap:0.5rem;">
+              <input type="text" id="ownerImgInput" class="form-control" placeholder="/images/jyotimoni-passport.jpeg or URL" required>
+              <select id="ownerPresetSelect" class="form-control" style="width:200px;" onchange="applyOwnerPreset(this.value)">
+                <option value="">Choose preset...</option>
+                <option value="/images/bytecare-logo.png">Bytecare Official Logo</option>
+                <option value="/images/jyotimoni-passport.jpeg">Jyotimoni Passport Photo</option>
+                <option value="/images/technician-desk.jpg">Technician Desk</option>
+                <option value="/images/hp-disassembly.jpg">Workbench Work</option>
+                <option value="/images/desktop-motherboard.jpg">Diagnostics</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ownerNameInput">Owner / Founder Name</label>
+            <input type="text" id="ownerNameInput" class="form-control" placeholder="e.g. Jyotimoni Bezbaruah" required>
+          </div>
+
+          <div class="form-group">
+            <label for="ownerRoleInput">Role / Professional Title</label>
+            <input type="text" id="ownerRoleInput" class="form-control" placeholder="e.g. Lead Hardware Technician & Founder" required>
+          </div>
+
+          <div class="form-group">
+            <label for="ownerBioInput">Biography / Profile Description</label>
+            <textarea id="ownerBioInput" class="form-control" rows="3" placeholder="Brief description of tech experience and background..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="margin-top:0.5rem;">Save Owner Profile</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tab 4: Contacts Table -->
     <div id="tabContacts" class="tab-content" style="display:none;">
       <h3 style="font-family:var(--font-title); color:var(--color-navy-brand); margin-bottom:1rem;">Customer Inquiries</h3>
       <div class="data-table-card">
@@ -204,7 +368,7 @@
       </div>
     </div>
 
-    <!-- Tab 3: Reviews Table -->
+    <!-- Tab 5: Reviews Table -->
     <div id="tabReviews" class="tab-content" style="display:none;">
       <h3 style="font-family:var(--font-title); color:var(--color-navy-brand); margin-bottom:1rem;">Moderate Reviews</h3>
       <div class="data-table-card">
@@ -231,6 +395,10 @@
 
 <div class="toast-container" id="toastContainer"></div>
 
+<!-- Firebase Cloud Firestore SDKs (Compat CDN) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-config.js"></script>
 <script src="/js/admin.js"></script>
 </body>
 </html>

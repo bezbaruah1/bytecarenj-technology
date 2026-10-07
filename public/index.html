@@ -3,21 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bytecare NJ Technology — Goalpara, Assam | Repair, Photo Printing & CCTV</title>
-  <meta name="description" content="Bytecare NJ Technology — laptop repair, PC repair, passport photo printing and CCTV installation in Goalpara, Assam. Track your repair status online!">
+  <title>Bytecare NJ Technology — Kamrup (R), Assam | Repair, Photo Printing &amp; CCTV</title>
+  <meta name="description" content="Bytecare NJ Technology — laptop repair, PC repair, passport photo printing and CCTV installation in Kamrup (R), Bullapar, VIP, Assam. Track your repair status online!">
+  <link rel="icon" type="image/png" href="/images/bytecare-logo.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/bytecare-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('bytecare-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 <body>
+
+<!-- ============ INITIAL TECHNICIAN LOADING SCREEN ============ -->
+<div class="site-loader" id="siteLoader" role="status" aria-live="polite" aria-label="Technician Bench Boot Sequence — Bytecare NJ Technology">
+  <div class="site-loader-grid" aria-hidden="true"></div>
+  <div class="site-loader-noise" aria-hidden="true"></div>
+  <div class="site-loader-vignette" aria-hidden="true"></div>
+
+  <div class="site-loader-console">
+    <!-- Top Telemetry Bar -->
+    <div class="site-loader-console-top">
+      <div class="loader-top-left">
+        <span class="loader-live-dot" aria-hidden="true"></span>
+        <span class="loader-kicker">BENCH OS // DIAGNOSTIC SEQUENCE</span>
+      </div>
+      <div class="loader-top-right">
+        <span class="loader-telemetry-badge">19.5V DC</span>
+        <span class="loader-telemetry-badge">SMPS: OK</span>
+        <button type="button" class="loader-skip-btn" id="loaderSkipBtn" title="Skip boot sequence (Esc)">SKIP [ESC]</button>
+      </div>
+    </div>
+
+    <!-- Centerpiece: Hardware Diagnostic Core -->
+    <div class="loader-instrument" aria-hidden="true">
+      <!-- Rotating Calibrated Reticles -->
+      <div class="loader-reticle loader-reticle-outer">
+        <span class="reticle-tick reticle-tick-0">0°</span>
+        <span class="reticle-tick reticle-tick-90">90°</span>
+        <span class="reticle-tick reticle-tick-180">180°</span>
+        <span class="reticle-tick reticle-tick-270">270°</span>
+      </div>
+      <div class="loader-reticle loader-reticle-mid"></div>
+      <div class="loader-reticle loader-reticle-inner"></div>
+
+      <!-- Laser Scanner Line -->
+      <div class="loader-scanline"></div>
+
+      <!-- Microcontroller BGA Package -->
+      <div class="loader-chip-container">
+        <!-- SVG Microprocessor with Circuit Traces & Pins -->
+        <svg class="loader-chip" viewBox="0 0 160 160" fill="none">
+          <circle cx="80" cy="80" r="76" stroke="rgba(23, 182, 212, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
+          <path d="M46 12v16 M60 12v16 M74 12v16 M86 12v16 M100 12v16 M114 12v16" stroke="#17b6d4" stroke-width="3" stroke-linecap="round"/>
+          <path d="M46 132v16 M60 132v16 M74 132v16 M86 132v16 M100 132v16 M114 132v16" stroke="#17b6d4" stroke-width="3" stroke-linecap="round"/>
+          <path d="M12 46h16 M12 60h16 M12 74h16 M12 86h16 M12 100h16 M12 114h16" stroke="#17b6d4" stroke-width="3" stroke-linecap="round"/>
+          <path d="M132 46h16 M132 60h16 M132 74h16 M132 86h16 M132 100h16 M132 114h16" stroke="#17b6d4" stroke-width="3" stroke-linecap="round"/>
+
+          <rect x="28" y="28" width="104" height="104" rx="14" fill="#081f45" stroke="#17b6d4" stroke-width="2.5"/>
+          <rect x="42" y="42" width="76" height="76" rx="8" fill="#061530" stroke="rgba(127, 227, 239, 0.7)" stroke-width="1.8"/>
+
+          <circle cx="38" cy="38" r="3" fill="#7fe3ef"/>
+          <circle cx="122" cy="38" r="3" fill="#7fe3ef"/>
+          <circle cx="38" cy="122" r="3" fill="#7fe3ef"/>
+          <circle cx="122" cy="122" r="3" fill="#7fe3ef"/>
+
+          <path d="M52 52 L66 66 H94 L108 52" stroke="rgba(23, 182, 212, 0.55)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M52 108 L66 94 H94 L108 108" stroke="rgba(23, 182, 212, 0.55)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M52 80 H66 M94 80 H108" stroke="rgba(23, 182, 212, 0.6)" stroke-width="2"/>
+
+          <circle cx="80" cy="80" r="16" fill="rgba(23, 182, 212, 0.2)" stroke="#7fe3ef" stroke-width="2"/>
+          <circle cx="80" cy="80" r="7" fill="#7fe3ef" class="loader-die-core"/>
+        </svg>
+
+        <span class="loader-instrument-label loader-label-top">CPU/BGA CORE</span>
+        <span class="loader-instrument-label loader-label-bottom">STATION: KMP-01</span>
+      </div>
+
+      <!-- Live Oscilloscope Waveform Display -->
+      <div class="loader-oscilloscope">
+        <div class="oscilloscope-screen">
+          <svg class="oscilloscope-wave" viewBox="0 0 160 36" fill="none">
+            <path class="wave-grid" d="M0 18 H160 M40 0 V36 M80 0 V36 M120 0 V36"/>
+            <path class="wave-trace" d="M0 18 Q 20 2, 40 18 T 80 18 T 120 18 T 160 18"/>
+            <path class="wave-pulse" d="M0 18 L30 18 L35 4 L42 32 L48 10 L54 22 L60 18 L160 18"/>
+          </svg>
+          <div class="oscilloscope-meta">
+            <span>CH1: 1.2Vpp</span>
+            <span class="osc-freq">24.00 MHz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand Identity -->
+    <div class="site-loader-brand">
+      <span class="loader-brand-name">BYTE<span>CARE</span> NJ</span>
+      <span class="loader-brand-tag">Electronics Diagnostic &amp; IT Service Bench</span>
+    </div>
+
+    <!-- Live Terminal Stream Logs -->
+    <div class="loader-terminal-box">
+      <div class="terminal-line terminal-prev" id="loaderTerminalPrev">POST: Initializing diagnostic bus... [OK]</div>
+      <div class="terminal-line terminal-current">
+        <span class="terminal-prompt">&gt;</span>
+        <span id="loaderStatusText">Waking repair bench instruments...</span>
+        <span class="terminal-cursor">_</span>
+      </div>
+    </div>
+
+    <!-- Progress Meter -->
+    <div class="loader-status-row">
+      <span class="loader-status-label">HARDWARE BENCH BOOT</span>
+      <span id="loaderProgressText" class="loader-percent">00%</span>
+    </div>
+
+    <!-- Multi-Segmented Progress Track -->
+    <div class="loader-segments" aria-hidden="true" id="loaderSegments">
+      <span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span>
+      <span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span>
+    </div>
+
+    <!-- Bottom Telemetry Badges -->
+    <div class="loader-telemetry" aria-hidden="true">
+      <span>CHIP-LEVEL: <b>READY</b></span>
+      <span>CCTV SURV: <b>SYNCED</b></span>
+      <span>BENCH: <b>KAMRUP (R), ASSAM</b></span>
+    </div>
+  </div>
+</div>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="container header-row">
-    <a href="#" class="brand">
-      <span class="brand-name">BYTE<span>CARE</span> NJ</span>
-      <span class="brand-tag">Smart Solutions, Reliable Service</span>
+    <a href="#" class="brand" aria-label="Bytecare NJ Technology Home">
+      <img src="/images/bytecare-logo.png" alt="Bytecare NJ Technology" class="brand-logo-img">
     </a>
 
     <nav class="main-nav" id="mainNav">
@@ -32,8 +160,22 @@
     </nav>
 
     <div class="nav-actions">
+      <!-- Dark / Light Mode Toggle -->
+      <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light / Dark mode" title="Toggle Light / Dark mode">
+        <span class="toggle-icon-sun" aria-hidden="true">☀️</span>
+        <span class="toggle-icon-moon" aria-hidden="true">🌙</span>
+      </button>
+
+      <!-- WhatsApp Direct Button -->
+      <a href="https://wa.me/918638594006?text=Hello%20Bytecare%20NJ%2C%20I%20have%20an%20inquiry%20regarding%20your%20services." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-sm" title="Chat on WhatsApp (+91 86385 94006)">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <!-- Primary Action -->
       <button class="btn-primary btn-sm" id="openBookingBtn">Book Repair / Survey</button>
-      <a href="/admin.html" class="btn-secondary btn-sm" title="Shop Admin Login">Admin Portal</a>
+
+      <!-- Mobile Hamburger -->
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -47,14 +189,18 @@
     <div class="hero-copy">
       <div class="status-line">
         <span class="dot"></span>
-        <span class="eyebrow">Goalpara · Assam — Systems Online</span>
+        <span class="eyebrow">Kamrup (R) · Assam — Systems Online</span>
       </div>
       <h1>One stop solution for all your tech needs</h1>
-      <p class="lead">Welcome to Bytecare NJ, where technology meets reliable service in Goalpara, Assam. From laptop screen replacements to CCTV setups and instant passport photos, we keep your devices and business running smoothly.</p>
+      <p class="lead">Welcome to Bytecare NJ, where technology meets reliable service across Kamrup (R), Assam. From laptop screen replacements to CCTV setups and instant passport photos, we keep your devices and business running smoothly.</p>
       <div class="hero-actions">
         <button class="btn-primary" onclick="openBookingModal()">Book a Repair</button>
+        <a href="https://wa.me/918638594006?text=Hello%20Bytecare%20NJ%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+          <span>WhatsApp Chat</span>
+        </a>
         <a href="#track" class="btn-secondary">Track Status</a>
-        <a href="tel:+919707701954" class="btn-secondary">Call +91 97077 01954</a>
+        <a href="tel:+918638594006" class="btn-secondary">Call +91 86385 94006</a>
       </div>
     </div>
 
@@ -103,10 +249,10 @@
         <div>
           <span class="eyebrow" style="color: #7fe3ef;">Live Service Portal</span>
           <h2>Track Your Repair Status</h2>
-          <p>Enter your Tracking ID (e.g. <code>BC-8942-GLP</code>) or Mobile Phone Number below:</p>
+          <p>Enter your Tracking ID (e.g. <code>BC-8942-KMR</code>) or Mobile Phone Number below:</p>
         </div>
         <div>
-          <button class="btn-primary btn-sm" onclick="trackSample('BC-8942-GLP')">Try Demo ID: BC-8942-GLP</button>
+          <button class="btn-primary btn-sm" onclick="trackSample('BC-8942-KMR')">Try Demo ID: BC-8942-KMR</button>
         </div>
       </div>
 
@@ -129,34 +275,70 @@
     <div class="section-head">
       <span class="eyebrow">Our Core Solutions</span>
       <h2>Four services, one expert shop</h2>
-      <p>Everything under one roof in Goalpara — walk in anytime, or book online to skip the wait.</p>
+      <p>Everything under one roof in Kamrup (R) — walk in anytime, or book online to skip the wait.</p>
     </div>
 
     <div class="services-grid" id="servicesGrid">
+
+      <!-- 1. Laptop Repair (Multi-Image Support) -->
       <article class="service-card">
-        <div class="service-img-wrapper">
-          <img src="/images/cracked-screen.jpg" alt="Lenovo ThinkPad Cracked Screen Repair at Bytecare NJ Goalpara">
-          <span class="service-img-tag">Goalpara Bench — Screen Swap</span>
+        <div class="service-img-wrapper" data-service-id="laptop-repair">
+          <div class="service-slide is-active">
+            <img src="/images/cracked-screen.jpg" alt="Screen Replacement at Bytecare NJ Kamrup (R)">
+          </div>
+          <div class="service-slide">
+            <img src="/images/dell-motherboard.jpg" alt="Dell Motherboard Soldering Repair">
+          </div>
+          <div class="service-slide">
+            <img src="/images/laptop-hinge.jpg" alt="Laptop Hinge and Body Repair">
+          </div>
+          <div class="service-slide">
+            <img src="/images/laptop-keyboard.jpg" alt="Laptop Keyboard Replacement">
+          </div>
+          <span class="service-img-tag">Repair Bench — Screen Swap</span>
+          <button type="button" class="service-arrow service-arrow-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="service-arrow service-arrow-next" aria-label="Next image">›</button>
+          <div class="service-nav-dots">
+            <button type="button" class="service-nav-dot is-active" aria-label="Slide 1"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 2"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 3"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 4"></button>
+          </div>
         </div>
         <div class="icon-badge">
           <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 18h20l-1.5 2.5a1 1 0 0 1-.9.5H4.4a1 1 0 0 1-.9-.5L2 18Z"/></svg>
         </div>
         <h3>Laptop Repair</h3>
         <ul>
-          <li>Screen &amp; LCD panel replacement</li>
-          <li>Motherboard chip repair &amp; liquid restoration</li>
-          <li>Battery, keyboard &amp; charger replacement</li>
+          <li>Screen &amp; LCD panel replacement (Dell, HP, Lenovo, ASUS)</li>
+          <li>Motherboard chip repair &amp; liquid damage restoration</li>
+          <li>Battery, keyboard &amp; charger replacement with warranty</li>
         </ul>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
-          <span class="price-tag">From ₹499</span>
-          <button class="btn-secondary btn-sm" onclick="openBookingModal('Laptop Repair')">Book Now</button>
+        <div style="margin-top: auto; padding-top: 1rem;">
+          <button class="btn-primary btn-sm" style="width: 100%; justify-content: center;" onclick="openBookingModal('Laptop Repair')">Book Repair</button>
         </div>
       </article>
 
+      <!-- 2. PCs Repair (Multi-Image Support) -->
       <article class="service-card">
-        <div class="service-img-wrapper">
-          <img src="/images/pc-rgb-workbench.jpg" alt="PC Diagnostics & RGB Workbench at Bytecare NJ Technology">
+        <div class="service-img-wrapper" data-service-id="pc-repair">
+          <div class="service-slide is-active">
+            <img src="/images/pc-rgb-workbench.jpg" alt="PC Diagnostics & RGB Workbench at Bytecare NJ">
+          </div>
+          <div class="service-slide">
+            <img src="/images/desktop-motherboard.jpg" alt="Desktop Motherboard Overhaul">
+          </div>
+          <div class="service-slide">
+            <img src="/images/hp-disassembly.jpg" alt="Desktop Diagnostics Bench">
+          </div>
           <span class="service-img-tag">Custom Rig &amp; SMPS Workbench</span>
+          <button type="button" class="service-arrow service-arrow-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="service-arrow service-arrow-next" aria-label="Next image">›</button>
+          <div class="service-nav-dots">
+            <button type="button" class="service-nav-dot is-active" aria-label="Slide 1"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 2"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 3"></button>
+          </div>
         </div>
         <div class="icon-badge">
           <svg viewBox="0 0 24 24"><rect x="4" y="3" width="12" height="15" rx="1.5"/><path d="M8 21h4M10 18v3"/><circle cx="10" cy="8" r="2"/></svg>
@@ -167,16 +349,27 @@
           <li>Virus, malware &amp; ransomware removal</li>
           <li>Custom gaming &amp; office PC upgrades</li>
         </ul>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
-          <span class="price-tag">From ₹399</span>
-          <button class="btn-secondary btn-sm" onclick="openBookingModal('PC Repair')">Book Now</button>
+        <div style="margin-top: auto; padding-top: 1rem;">
+          <button class="btn-primary btn-sm" style="width: 100%; justify-content: center;" onclick="openBookingModal('PC Repair')">Book Repair</button>
         </div>
       </article>
 
+      <!-- 3. Passport Size Photo Printing (Dedicated Related Photos) -->
       <article class="service-card">
-        <div class="service-img-wrapper">
-          <img src="/images/storage-ram-upgrade.jpg" alt="SSD and RAM Upgrade Service at Bytecare NJ">
-          <span class="service-img-tag">High Speed SSD &amp; RAM Upgrade</span>
+        <div class="service-img-wrapper" data-service-id="passport-photo">
+          <div class="service-slide is-active">
+            <img src="/images/passport-photos.jpg" alt="Instant Passport Size Photo Printing Studio at Bytecare NJ">
+          </div>
+          <div class="service-slide">
+            <img src="/images/storage-ram-upgrade.jpg" alt="Digital Photo Finishing Counter">
+          </div>
+          <span class="service-img-tag">Instant Photo Studio Setup</span>
+          <button type="button" class="service-arrow service-arrow-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="service-arrow service-arrow-next" aria-label="Next image">›</button>
+          <div class="service-nav-dots">
+            <button type="button" class="service-nav-dot is-active" aria-label="Slide 1"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 2"></button>
+          </div>
         </div>
         <div class="icon-badge">
           <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.4"/><rect x="7" y="3" width="10" height="4" rx="1"/></svg>
@@ -187,31 +380,42 @@
           <li>All official passport, visa &amp; Govt size specs</li>
           <li>Digital soft-copy sent straight to WhatsApp</li>
         </ul>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
-          <span class="price-tag">From ₹99 (8 Copies)</span>
-          <button class="btn-secondary btn-sm" onclick="openBookingModal('Passport Photo Printing')">Order Print</button>
+        <div style="margin-top: auto; padding-top: 1rem;">
+          <button class="btn-primary btn-sm" style="width: 100%; justify-content: center;" onclick="openBookingModal('Passport Photo Printing')">Order Photo Print</button>
         </div>
       </article>
 
+      <!-- 4. CCTV Installation (Dedicated Related Photos) -->
       <article class="service-card">
-        <div class="service-img-wrapper">
-          <img src="/images/desktop-motherboard.jpg" alt="CCTV Camera Setup & Security Systems in Goalpara">
+        <div class="service-img-wrapper" data-service-id="cctv-installation">
+          <div class="service-slide is-active">
+            <img src="/images/cctv-surveillance.jpg" alt="HD CCTV Security Camera Systems Installation at Bytecare NJ">
+          </div>
+          <div class="service-slide">
+            <img src="/images/desktop-motherboard.jpg" alt="CCTV DVR Security Monitoring Configuration">
+          </div>
           <span class="service-img-tag">HD CCTV &amp; Security Setup</span>
+          <button type="button" class="service-arrow service-arrow-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="service-arrow service-arrow-next" aria-label="Next image">›</button>
+          <div class="service-nav-dots">
+            <button type="button" class="service-nav-dot is-active" aria-label="Slide 1"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 2"></button>
+          </div>
         </div>
         <div class="icon-badge">
           <svg viewBox="0 0 24 24"><rect x="2" y="9" width="13" height="7" rx="2.5"/><circle cx="12" cy="12.5" r="2.2"/><path d="M15 11l6-3v9l-6-3"/></svg>
         </div>
         <h3>CCTV Installation</h3>
         <ul>
-          <li>Free on-site security survey in Goalpara</li>
+          <li>Free on-site security survey in Kamrup (R)</li>
           <li>Full HD / 4K IP camera &amp; DVR/NVR setup</li>
           <li>Remote live viewing on iPhone &amp; Android</li>
         </ul>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
-          <span class="price-tag">Free Site Survey</span>
-          <button class="btn-secondary btn-sm" onclick="openBookingModal('CCTV Installation')">Request Survey</button>
+        <div style="margin-top: auto; padding-top: 1rem;">
+          <button class="btn-primary btn-sm" style="width: 100%; justify-content: center;" onclick="openBookingModal('CCTV Installation')">Request Site Survey</button>
         </div>
       </article>
+
     </div>
   </div>
 </section>
@@ -222,7 +426,7 @@
     <div class="section-head">
       <span class="eyebrow" style="color: #7fe3ef;">Real Repairs, Real Experience</span>
       <h2>Inside Bytecare NJ Workshop</h2>
-      <p>Actual photos from our repair workbench in Goalpara, Assam — hardware diagnostics, chip-level soldering, screen replacements &amp; custom PC builds.</p>
+      <p>Actual photos from our repair workbench in Kamrup (R), Assam — hardware diagnostics, chip-level soldering, screen replacements &amp; custom PC builds.</p>
     </div>
 
     <div class="gallery-grid">
@@ -243,6 +447,22 @@
       </div>
 
       <div class="gallery-item">
+        <img src="/images/cctv-surveillance.jpg" alt="Commercial CCTV Security System Monitoring">
+        <div class="gallery-overlay">
+          <div class="title">CCTV Surveillance Hub</div>
+          <div class="sub">HD IP camera network &amp; DVR configuration</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/passport-photos.jpg" alt="Instant High-Gloss Passport Size Photo Printing Studio">
+        <div class="gallery-overlay">
+          <div class="title">Passport Photo Studio</div>
+          <div class="sub">Instant biometric ID photo printing</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
         <img src="/images/pc-rgb-workbench.jpg" alt="PC RGB Cooler Fan & Workbench Testing">
         <div class="gallery-overlay">
           <div class="title">Custom PC Workbench</div>
@@ -253,7 +473,7 @@
       <div class="gallery-item">
         <img src="/images/technician-desk.jpg" alt="Lead Technician Jyotimoni Bezbaruah at Bytecare NJ Repair Desk">
         <div class="gallery-overlay">
-          <div class="title">Goalpara Repair Counter</div>
+          <div class="title">Tech Counter &amp; Diagnostics</div>
           <div class="sub">Jyotimoni Bezbaruah at repair desk</div>
         </div>
       </div>
@@ -263,22 +483,6 @@
         <div class="gallery-overlay">
           <div class="title">Storage &amp; RAM Upgrade</div>
           <div class="sub">WD 1TB HDD &amp; DDR4 RAM upgrade</div>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="/images/laptop-hinge.jpg" alt="Laptop Keyboard & Hinge Fabrication">
-        <div class="gallery-overlay">
-          <div class="title">Hinge &amp; Body Fabrication</div>
-          <div class="sub">Loose hinge alignment &amp; keyboard repair</div>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="/images/desktop-motherboard.jpg" alt="Lenovo Desktop Workstation Motherboard Setup">
-        <div class="gallery-overlay">
-          <div class="title">Desktop PC Overhaul</div>
-          <div class="sub">Workstation tower fan &amp; motherboard overhaul</div>
         </div>
       </div>
 
@@ -297,7 +501,7 @@
 <section class="why-us" id="why-us">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow" style="color: #7fe3ef;">Why Goalpara Trusts Us</span>
+      <span class="eyebrow" style="color: #7fe3ef;">Why Kamrup (R) Trusts Us</span>
       <h2>Why Choose Bytecare NJ</h2>
       <p>Four reasons local businesses and residents rely on us for fast, genuine service.</p>
     </div>
@@ -328,14 +532,14 @@
       </div>
     </div>
 
-    <!-- Lead Technician Profile Banner -->
-    <div class="tech-profile-card">
+    <!-- Owner / Lead Technician Profile Banner (Dynamically updated via Admin) -->
+    <div class="tech-profile-card" id="whyUsOwnerCard">
       <div class="tech-avatar">
-        <img src="/images/technician-desk.jpg" alt="Jyotimoni Bezbaruah - Lead Technician Bytecare NJ Goalpara">
+        <img id="whyUsOwnerImg" src="/images/jyotimoni-passport.jpeg" alt="Jyotimoni Bezbaruah - Lead Technician Bytecare NJ">
       </div>
       <div class="tech-info">
-        <h4>Meet Jyotimoni Bezbaruah</h4>
-        <p>Lead Hardware Technician &amp; Founder at Bytecare NJ Technology — Goalpara, Assam</p>
+        <h4 id="whyUsOwnerName">Meet Jyotimoni Bezbaruah</h4>
+        <p id="whyUsOwnerBio">Lead Hardware Technician &amp; Founder at Bytecare NJ Technology — Kamrup (R), Assam</p>
       </div>
     </div>
   </div>
@@ -348,7 +552,7 @@
       <div>
         <span class="eyebrow">Customer Feedback</span>
         <h2>What Our Clients Say</h2>
-        <p>Verified reviews from local customers across Goalpara &amp; surrounding areas.</p>
+        <p>Verified reviews from local customers across Kamrup (R) &amp; surrounding areas.</p>
       </div>
       <button class="btn-secondary" onclick="openReviewModal()">Write a Review</button>
     </div>
@@ -369,36 +573,43 @@
         <h2>Contact Bytecare NJ</h2>
         <ul class="contact-list">
           <li>
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z" stroke="#0b2a52" fill="none" stroke-width="1.8"/></svg></span>
+            <span class="icon-badge icon-badge-whatsapp"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg></span>
             <div>
-              <strong>Primary Phone:</strong><br>
-              <a href="tel:+919707701954">+91 97077 01954</a>
+              <strong>WhatsApp Support (Fastest):</strong><br>
+              <a href="https://wa.me/918638594006?text=Hello%20Bytecare%20NJ%2C%20I%20have%20an%20inquiry%20regarding%20your%20services." target="_blank" rel="noopener noreferrer" style="color: #25D366; font-weight: 600;">+91 86385 94006 (Chat Online)</a>
             </div>
           </li>
           <li>
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z" stroke="#0b2a52" fill="none" stroke-width="1.8"/></svg></span>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z"/></svg></span>
             <div>
-              <strong>Secondary Contact:</strong><br>
+              <strong>Primary Contact:</strong><br>
               <a href="tel:+918638594006">+91 86385 94006</a>
             </div>
           </li>
           <li>
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 4h16v16H4V4Z" stroke="#0b2a52" fill="none" stroke-width="1.8"/><path d="M4 6l8 7 8-7" stroke="#0b2a52" fill="none" stroke-width="1.8"/></svg></span>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+            <div>
+              <strong>Alternate Contact:</strong><br>
+              <a href="tel:+919707701954">+91 97077 01954</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
             <div>
               <strong>Email Address:</strong><br>
               <a href="mailto:bezbaruah.jyotimoni1@gmail.com">bezbaruah.jyotimoni1@gmail.com</a>
             </div>
           </li>
           <li>
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="#0b2a52" fill="none" stroke-width="1.8"/><circle cx="12" cy="9" r="2.3" stroke="#0b2a52" fill="none" stroke-width="1.8"/></svg></span>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <div>
               <strong>Shop Address:</strong><br>
-              <span class="addr">Goalpara Guwahati Rd, Bullapar, VIP, 1st floor, Near Basuda Sweet, Goalpara, Assam 781015</span>
+              <span class="addr">Kamrup (R), Bullapar, VIP, 1st floor, Near Basuda Sweet, Assam 781015</span>
             </div>
           </li>
         </ul>
 
-        <a class="btn-primary" style="width: 100%; justify-content: center;" href="https://www.google.com/maps/search/?api=1&query=Goalpara+Guwahati+Rd%2C+Bullapar%2C+VIP%2C+Goalpara%2C+Assam+781015" target="_blank" rel="noopener">
+        <a class="btn-primary" style="width: 100%; justify-content: center;" href="https://www.google.com/maps/search/?api=1&query=Kamrup+%28R%29%2C+Bullapar%2C+VIP%2C+1st+floor%2C+Near+Basuda+Sweet%2C+Assam+781015" target="_blank" rel="noopener">
           Get Google Maps Directions
         </a>
       </div>
@@ -420,12 +631,16 @@
             <textarea id="contactMessage" class="form-control" rows="3" placeholder="How can we help you today?" required></textarea>
           </div>
           <button type="submit" class="btn-primary" style="width: 100%;">Send Inquiry</button>
+          <button type="button" id="contactWhatsAppBtn" class="btn-whatsapp" style="width: 100%; margin-top: 0.6rem; justify-content: center;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+            <span>Chat Directly on WhatsApp</span>
+          </button>
         </form>
 
         <div class="map-frame" style="margin-top: 1.8rem;">
           <iframe
             title="Bytecare NJ Technology location map"
-            src="https://www.google.com/maps?q=Goalpara+Guwahati+Rd,+Bullapar,+VIP,+Goalpara,+Assam+781015&output=embed"
+            src="https://www.google.com/maps?q=Kamrup+(R),+Bullapar,+VIP,+Assam+781015&output=embed"
             loading="lazy">
           </iframe>
         </div>
@@ -438,16 +653,23 @@
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="container footer-top">
-    <div class="footer-message">We Care for Your TECHNOLOGY.</div>
+    <div class="footer-brand-wrap">
+      <img src="/images/bytecare-logo.png" alt="Bytecare NJ Technology" class="footer-logo-img">
+      <div class="footer-message">We Care for Your TECHNOLOGY.</div>
+    </div>
     <div class="footer-contact">
-      <a href="tel:+919707701954">+91 97077 01954</a> | <a href="tel:+918638594006">+91 86385 94006</a>
+      <a href="https://wa.me/918638594006?text=Hello%20Bytecare%20NJ" target="_blank" rel="noopener noreferrer" style="color: #25D366; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem;">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+        WhatsApp: +91 86385 94006
+      </a>
+      <a href="tel:+918638594006">+91 86385 94006</a> | <a href="tel:+919707701954">+91 97077 01954</a>
       <a href="mailto:bezbaruah.jyotimoni1@gmail.com">bezbaruah.jyotimoni1@gmail.com</a>
-      <span>Goalpara Guwahati Rd, Bullapar, VIP, 1st floor, Near Basuda Sweet, Goalpara, Assam 781015</span>
+      <span>Kamrup (R), Bullapar, VIP, 1st floor, Near Basuda Sweet, Assam 781015</span>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 Bytecare NJ Technology. All rights reserved.</span>
-    <span>Goalpara, Assam</span>
+    <span>© 2026 Bytecare NJ Technology. All rights reserved. <a href="/admin.html" class="admin-discreet-link" title="Management Login" aria-label="Management Login">🔒</a></span>
+    <span>Kamrup (R), Assam</span>
   </div>
 </footer>
 
@@ -458,7 +680,7 @@
   <div class="modal-window">
     <button class="modal-close" onclick="closeBookingModal()">&times;</button>
     <h2 style="font-family: var(--font-title); color: var(--color-navy-brand); margin-top: 0;">Book Service / Request Survey</h2>
-    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Fill out your service details and our Goalpara team will confirm your slot and assign a tracking ticket.</p>
+    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Fill out your service details and our team in Kamrup (R) will confirm your slot and assign a tracking ticket.</p>
 
     <form id="bookingForm">
       <div class="form-group">
@@ -506,7 +728,7 @@
   <div class="modal-window">
     <button class="modal-close" onclick="closeReviewModal()">&times;</button>
     <h2 style="font-family: var(--font-title); color: var(--color-navy-brand); margin-top: 0;">Write a Customer Review</h2>
-    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Share your experience with Bytecare NJ Technology in Goalpara.</p>
+    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Share your experience with Bytecare NJ Technology in Kamrup (R).</p>
 
     <form id="reviewForm">
       <div class="form-group">
@@ -516,7 +738,7 @@
 
       <div class="form-group">
         <label for="revLocation">Location / Area</label>
-        <input type="text" id="revLocation" class="form-control" placeholder="e.g. Goalpara Town / Agia" value="Goalpara">
+        <input type="text" id="revLocation" class="form-control" placeholder="e.g. Mirza / Palashbari / Kamrup (R)" value="Kamrup (R)">
       </div>
 
       <div class="form-group">
@@ -548,9 +770,71 @@
   </div>
 </div>
 
+<!-- ============ FLOATING WHATSAPP CHAT WIDGET ============ -->
+<div class="whatsapp-widget-container" id="whatsappWidget">
+  <!-- Interactive Popup Chat Box -->
+  <div class="whatsapp-chat-box" id="whatsappChatBox">
+    <div class="whatsapp-chat-header">
+      <div class="whatsapp-avatar">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="#ffffff">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+        </svg>
+        <span class="whatsapp-online-dot"></span>
+      </div>
+      <div class="whatsapp-header-info">
+        <h4>Bytecare NJ Support</h4>
+        <span class="whatsapp-status-text">Online | +91 86385 94006</span>
+      </div>
+      <button class="whatsapp-close-btn" id="closeWhatsAppBox" aria-label="Close WhatsApp Chat">&times;</button>
+    </div>
+
+    <div class="whatsapp-chat-body">
+      <div class="whatsapp-message-bubble">
+        <p>👋 Hello! Welcome to Bytecare NJ Technology (Kamrup R).</p>
+        <p>How can we assist your laptop, PC, CCTV, or photo printing needs today?</p>
+        <span class="whatsapp-msg-time">Just now</span>
+      </div>
+
+      <div class="whatsapp-quick-chips">
+        <button type="button" class="wa-chip" data-msg="Hello Bytecare NJ, I would like to get a quote for Laptop / PC Repair.">💻 Laptop / PC Repair Quote</button>
+        <button type="button" class="wa-chip" data-msg="Hello Bytecare NJ, I need information about CCTV Installation & Survey in Kamrup (R).">📹 CCTV Installation &amp; Survey</button>
+        <button type="button" class="wa-chip" data-msg="Hello Bytecare NJ, I want to inquire about Passport Photo Printing.">🖨️ Passport Size Photo Printing</button>
+        <button type="button" class="wa-chip" data-msg="Hello Bytecare NJ, I want to check the status of my repair order.">🔍 Track My Repair Ticket</button>
+      </div>
+    </div>
+
+    <div class="whatsapp-chat-footer">
+      <div class="whatsapp-input-wrap">
+        <input type="text" id="whatsappCustomMsg" placeholder="Type a message to WhatsApp..." aria-label="Message for WhatsApp">
+        <button type="button" id="whatsappSendBtn" aria-label="Send message to WhatsApp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Trigger Button -->
+  <button class="whatsapp-float-trigger" id="whatsappFloatTrigger" aria-label="Chat on WhatsApp with Bytecare NJ (+91 86385 94006)" title="Chat on WhatsApp (+91 86385 94006)">
+    <span class="whatsapp-pulse"></span>
+    <span class="whatsapp-badge">1</span>
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="#ffffff">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+    </svg>
+  </button>
+</div>
+
+<!-- Back to Top Floating Button -->
+<button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">↑</button>
+
 <!-- Toast Container -->
 <div class="toast-container" id="toastContainer"></div>
 
+<!-- Firebase Cloud Firestore SDKs (Compat CDN) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-config.js"></script>
 <script src="/js/app.js"></script>
 </body>
 </html>

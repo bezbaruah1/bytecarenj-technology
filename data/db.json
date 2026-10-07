@@ -1,7 +1,91 @@
 {
   "tickets": [
     {
-      "id": "BC-5935-GLP",
+      "id": "BC-6670-KMR",
+      "customerName": "tester",
+      "phone": "8909765432",
+      "email": "TESTER@TEST.COM",
+      "serviceType": "Laptop Repair",
+      "deviceModel": "Dell Inspiron",
+      "problemDescription": "",
+      "status": "In Repair",
+      "estimatedCost": 0,
+      "techNotes": "Job request submitted online. Awaiting technician inspection.",
+      "createdAt": "2026-10-07T17:16:04.710Z",
+      "updatedAt": "2026-10-07T17:16:43.651Z"
+    },
+    {
+      "id": "BC-2287-KMR",
+      "customerName": "tester",
+      "phone": "8909765432",
+      "email": "TESTER@TEST.COM",
+      "serviceType": "Laptop Repair",
+      "deviceModel": "Dell Inspiron",
+      "problemDescription": "",
+      "status": "Pending",
+      "estimatedCost": 0,
+      "techNotes": "Job request submitted online. Awaiting technician inspection.",
+      "createdAt": "2026-10-07T17:16:02.762Z",
+      "updatedAt": "2026-10-07T17:16:02.762Z"
+    },
+    {
+      "id": "BC-4276-KMR",
+      "customerName": "TestTEST",
+      "phone": "0987654321",
+      "email": "test@test.com",
+      "serviceType": "PC Repair",
+      "deviceModel": "N/A",
+      "problemDescription": "",
+      "status": "Pending",
+      "estimatedCost": 0,
+      "techNotes": "Job request submitted online. Awaiting technician inspection.",
+      "createdAt": "2026-10-07T16:56:15.576Z",
+      "updatedAt": "2026-10-07T16:56:15.576Z"
+    },
+    {
+      "id": "BC-6186-KMR",
+      "customerName": "William",
+      "phone": "1234567890",
+      "email": "william@william.com",
+      "serviceType": "Laptop Repair",
+      "deviceModel": "dell inspiron",
+      "problemDescription": "",
+      "status": "Pending",
+      "estimatedCost": 0,
+      "techNotes": "Job request submitted online. Awaiting technician inspection.",
+      "createdAt": "2026-10-07T16:52:36.369Z",
+      "updatedAt": "2026-10-07T16:52:36.369Z"
+    },
+    {
+      "id": "BC-6612-KMR",
+      "customerName": "Donkey",
+      "phone": "0987654321",
+      "email": "donkey@donk.com",
+      "serviceType": "Laptop Repair",
+      "deviceModel": "Donkey Pro max",
+      "problemDescription": "",
+      "status": "Pending",
+      "estimatedCost": 0,
+      "techNotes": "Job request submitted online. Awaiting technician inspection.",
+      "createdAt": "2026-10-07T13:30:04.974Z",
+      "updatedAt": "2026-10-07T13:30:04.974Z"
+    },
+    {
+      "id": "BC-9217-KMR",
+      "customerName": "Test Customer",
+      "phone": "9085970077",
+      "email": "test@test.com",
+      "serviceType": "Laptop Repair",
+      "deviceModel": "Dell Inspiron",
+      "problemDescription": "Charging port issue",
+      "status": "Pending",
+      "estimatedCost": 0,
+      "techNotes": "Job request submitted online. Awaiting technician inspection.",
+      "createdAt": "2026-09-24T14:19:53.404Z",
+      "updatedAt": "2026-09-24T14:19:53.404Z"
+    },
+    {
+      "id": "BC-5935-KMR",
       "customerName": "Bikram Sharma",
       "phone": "9864012345",
       "email": "",
@@ -15,7 +99,7 @@
       "updatedAt": "2026-07-29T17:51:17.883Z"
     },
     {
-      "id": "BC-8942-GLP",
+      "id": "BC-8942-KMR",
       "customerName": "Rahul Nath",
       "phone": "9876543210",
       "email": "rahul.nath@gmail.com",
@@ -29,7 +113,7 @@
       "updatedAt": "2026-07-29T14:15:00.000Z"
     },
     {
-      "id": "BC-7103-GLP",
+      "id": "BC-7103-KMR",
       "customerName": "Ankita Das",
       "phone": "9707701954",
       "email": "ankita.d@yahoo.com",
@@ -43,7 +127,7 @@
       "updatedAt": "2026-07-29T11:00:00.000Z"
     },
     {
-      "id": "BC-6520-GLP",
+      "id": "BC-6520-KMR",
       "customerName": "Bhabesh Kalita",
       "phone": "8638594006",
       "email": "bhabesh.store@gmail.com",
@@ -57,7 +141,7 @@
       "updatedAt": "2026-07-26T16:30:00.000Z"
     },
     {
-      "id": "BC-4019-GLP",
+      "id": "BC-4019-KMR",
       "customerName": "Manoj Choudhury",
       "phone": "9435012345",
       "email": "m.choudhury@rediffmail.com",
@@ -78,7 +162,7 @@
       "phone": "9854011223",
       "email": "sanjay.medhi@gmail.com",
       "subject": "CCTV quotation for 8 camera setup in office",
-      "message": "Hello Bytecare team, I need an estimate for installing 8 IP cameras with audio recording for our office near Goalpara College.",
+      "message": "Hello Bytecare team, I need an estimate for installing 8 IP cameras with audio recording for our office in Kamrup (R).",
       "status": "Unread",
       "createdAt": "2026-07-29T12:00:00.000Z"
     },
@@ -97,9 +181,9 @@
     {
       "id": "REV-1",
       "name": "Pranjal Sharma",
-      "location": "Goalpara Town",
+      "location": "Mirza, Kamrup (R)",
       "rating": 5,
-      "comment": "Fastest laptop screen replacement in Goalpara! Very courteous technician and original spare part used.",
+      "comment": "Fastest laptop screen replacement in Kamrup (R)! Very courteous technician and original spare part used.",
       "service": "Laptop Repair",
       "createdAt": "2026-07-20T10:00:00.000Z",
       "approved": true
@@ -107,7 +191,7 @@
     {
       "id": "REV-2",
       "name": "Momita Rabha",
-      "location": "VIP Road, Goalpara",
+      "location": "VIP Road, Kamrup (R)",
       "rating": 5,
       "comment": "Got 16 passport size photos printed in under 10 minutes. Super sharp quality photo paper!",
       "service": "Passport Photo Printing",
@@ -117,7 +201,7 @@
     {
       "id": "REV-3",
       "name": "Deepak Kumar",
-      "location": "Bullapar",
+      "location": "Palashbari, Kamrup (R)",
       "rating": 5,
       "comment": "Bytecare NJ installed 4 CCTV cameras at my pharmacy. Clean cable routing and mobile live preview works perfectly.",
       "service": "CCTV Installation",
@@ -131,6 +215,12 @@
       "title": "Laptop Repair",
       "icon": "laptop",
       "tagline": "Hardware & Software Diagnostics, Screen & Battery Replacement",
+      "images": [
+        "/images/cracked-screen.jpg",
+        "/images/dell-motherboard.jpg",
+        "/images/laptop-hinge.jpg",
+        "/images/laptop-keyboard.jpg"
+      ],
       "details": [
         "Screen & LCD replacement for all major brands (Dell, HP, Lenovo, ASUS, Acer)",
         "Motherboard chip-level repair & liquid damage restoration",
@@ -138,14 +228,18 @@
         "RAM & NVMe SSD speed upgrades with OS cloning",
         "Hinge repair & body fabrication"
       ],
-      "estimatedTime": "Same Day — 24 Hours",
-      "priceStarting": "₹499"
+      "estimatedTime": "Same Day — 24 Hours"
     },
     {
       "id": "pc-repair",
       "title": "PCs Repair",
       "icon": "desktop",
       "tagline": "Custom Builds, Component Upgrades, Virus Clean-up & SMPS Repair",
+      "images": [
+        "/images/pc-rgb-workbench.jpg",
+        "/images/desktop-motherboard.jpg",
+        "/images/hp-disassembly.jpg"
+      ],
       "details": [
         "Desktop SMPS & Power Supply replacement",
         "Custom gaming & office PC assembly",
@@ -153,14 +247,17 @@
         "Overheating resolution & liquid cooling setup",
         "Data backup, recovery & Windows re-installation"
       ],
-      "estimatedTime": "Same Day Turnaround",
-      "priceStarting": "₹399"
+      "estimatedTime": "Same Day Turnaround"
     },
     {
       "id": "passport-photo",
       "title": "Passport Size Photo Printing",
       "icon": "camera",
       "tagline": "Instant High-Gloss Prints, All Visa & Govt Format Dimensions",
+      "images": [
+        "/images/passport-photos.jpg",
+        "/images/storage-ram-upgrade.jpg"
+      ],
       "details": [
         "Instant passport, stamp & visa size photo printing",
         "Professional digital background enhancement & retouching",
@@ -168,14 +265,17 @@
         "Sets of 8, 16, 32, or 64 photo sheets",
         "Digital soft-copy sent straight to your WhatsApp or Email"
       ],
-      "estimatedTime": "5 - 10 Minutes Instant",
-      "priceStarting": "₹99"
+      "estimatedTime": "5 - 10 Minutes Instant"
     },
     {
       "id": "cctv-installation",
       "title": "CCTV Installation",
       "icon": "cctv",
       "tagline": "HD Security Cameras, NVR/DVR Setup & Remote Phone Monitoring",
+      "images": [
+        "/images/cctv-surveillance.jpg",
+        "/images/desktop-motherboard.jpg"
+      ],
       "details": [
         "Free on-site security survey for Home, Office, or Shop",
         "Full HD 1080p & 4K IP Dome & Bullet camera setups",
@@ -183,8 +283,14 @@
         "Remote live viewing on Android, iPhone & Laptop",
         "Annual maintenance & camera realignment services"
       ],
-      "estimatedTime": "1 — 2 Days Installation",
-      "priceStarting": "₹7,999 (Complete Kit)"
+      "estimatedTime": "1 — 2 Days Installation"
     }
-  ]
+  ],
+  "ownerProfile": {
+    "name": "Jyotimoni Bezbaruah",
+    "role": "Lead Hardware Technician & Founder",
+    "experience": "10+ Years Tech Expertise",
+    "image": "/images/jyotimoni-passport.jpeg",
+    "bio": "Certified electronics & hardware technician delivering precision diagnostics, chip-level micro-soldering, CCTV surveillance engineering, and instant photographic solutions across Kamrup (R), Assam."
+  }
 }

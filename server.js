@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const db = require('./db');
+const fbSync = require('./firebase-service');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -52,6 +53,9 @@ app.post('/api/bookings', (req, res) => {
       problemDescription
     });
 
+    // Auto-sync new booking to Cloud Firestore
+    fbSync.syncTicket(newTicket);
+
     res.status(201).json({
       success: true,
       message: 'Booking request created successfully!',
@@ -99,6 +103,8 @@ app.post('/api/contact', (req, res) => {
     }
 
     const contact = db.addContact({ name, phone, email, subject, message });
+    // Auto-sync contact to Cloud Firestore
+    fbSync.syncContact(contact);
     res.status(201).json({
       success: true,
       message: 'Message sent successfully! Our team will contact you shortly.',
@@ -129,6 +135,8 @@ app.post('/api/reviews', (req, res) => {
     }
 
     const newReview = db.addReview({ name, location, rating, comment, service });
+    // Auto-sync review to Cloud Firestore
+    fbSync.syncReview(newReview);
     res.status(201).json({
       success: true,
       message: 'Thank you for your review! It will appear on our website after quick moderation.',
@@ -174,6 +182,8 @@ app.patch('/api/admin/bookings/:id', requireAdmin, (req, res) => {
   if (!updated) {
     return res.status(404).json({ success: false, error: 'Ticket not found' });
   }
+  // Auto-sync updated ticket to Cloud Firestore
+  fbSync.syncTicket(updated);
   res.json({ success: true, ticket: updated });
 });
 
@@ -189,6 +199,8 @@ app.patch('/api/admin/contacts/:id', requireAdmin, (req, res) => {
   if (!updated) {
     return res.status(404).json({ success: false, error: 'Contact not found' });
   }
+  // Auto-sync updated contact to Cloud Firestore
+  fbSync.syncContact(updated);
   res.json({ success: true, contact: updated });
 });
 
@@ -204,7 +216,82 @@ app.patch('/api/admin/reviews/:id', requireAdmin, (req, res) => {
   if (!updated) {
     return res.status(404).json({ success: false, error: 'Review not found' });
   }
+  // Auto-sync moderated review to Cloud Firestore
+  fbSync.syncReview(updated);
   res.json({ success: true, review: updated });
+});
+
+// -------------------------------------------------------------
+// OWNER PROFILE & SERVICES MEDIA ENDPOINTS
+// -------------------------------------------------------------
+
+// Public: Get Owner Profile (for Why Us section)
+app.get('/api/owner', (req, res) => {
+  res.json({ success: true, owner: db.getOwnerProfile() });
+});
+
+// Admin: Update Owner Profile
+app.patch('/api/admin/owner', requireAdmin, (req, res) => {
+  const updated = db.updateOwnerProfile(req.body);
+  fbSync.syncOwnerProfile(updated);
+  res.json({ success: true, owner: updated });
+});
+
+// Admin: Get all services
+app.get('/api/admin/services', requireAdmin, (req, res) => {
+  res.json({ success: true, services: db.getServices() });
+});
+
+// Admin: Update a service
+app.patch('/api/admin/services/:id', requireAdmin, (req, res) => {
+  const { id } = req.params;
+  const updated = db.updateService(id, req.body);
+  if (!updated) {
+    return res.status(404).json({ success: false, error: 'Service not found' });
+  }
+  fbSync.syncService(id, updated);
+  res.json({ success: true, service: updated });
+});
+
+// Admin: Add image to service
+app.post('/api/admin/services/:id/images', requireAdmin, (req, res) => {
+  const { id } = req.params;
+  const { imageUrl } = req.body;
+  if (!imageUrl) {
+    return res.status(400).json({ success: false, error: 'imageUrl is required' });
+  }
+  const updated = db.addServiceImage(id, imageUrl);
+  if (!updated) {
+    return res.status(404).json({ success: false, error: 'Service not found' });
+  }
+  res.json({ success: true, service: updated });
+});
+
+// Admin: Delete image from service
+app.delete('/api/admin/services/:id/images/:index', requireAdmin, (req, res) => {
+  const { id, index } = req.params;
+  const updated = db.removeServiceImage(id, parseInt(index, 10));
+  if (!updated) {
+    return res.status(404).json({ success: false, error: 'Service not found' });
+  }
+  res.json({ success: true, service: updated });
+});
+
+// List available image assets
+app.get('/api/gallery-images', (req, res) => {
+  try {
+    const fs = require('fs');
+    const imagesDir = path.join(__dirname, 'public', 'images');
+    if (!fs.existsSync(imagesDir)) {
+      return res.json({ success: true, images: [] });
+    }
+    const files = fs.readdirSync(imagesDir)
+      .filter(f => /\.(jpg|jpeg|png|webp|svg)$/i.test(f))
+      .map(f => `/images/${f}`);
+    res.json({ success: true, images: files });
+  } catch (err) {
+    res.status(500).json({ success: false, error: 'Failed to list images' });
+  }
 });
 
 // Fallback to index.html for SPA routing

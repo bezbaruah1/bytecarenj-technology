@@ -1,5 +1,5 @@
 [build]
-  command = "pnpm install"
+  command = "npm install"
   publish = "public"
   functions = "functions"
 

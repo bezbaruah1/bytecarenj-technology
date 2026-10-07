@@ -1,709 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bytecare NJ Technology — Goalpara, Assam</title>
-<meta name="description" content="Bytecare NJ Technology — laptop repair, PC repair, passport photo printing and CCTV installation in Goalpara, Assam.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* =============================================================
-   Compiled from bytecare-nj-technology.less via lessc.
-   Source LESS file ships alongside this page — edit the .less,
-   recompile, and drop the output back in here.
-   ============================================================= */
-@keyframes pulse-dot {
-  0% {
-    box-shadow: 0 0 0 0 rgba(127, 227, 239, 0.55);
-  }
-  70% {
-    box-shadow: 0 0 0 9px rgba(127, 227, 239, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(127, 227, 239, 0);
-  }
-}
-* {
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: #0e2136;
-  background: #ffffff;
-  -webkit-font-smoothing: antialiased;
-}
-img,
-svg {
-  display: block;
-  max-width: 100%;
-}
-a {
-  color: inherit;
-}
-.container {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 1.75rem;
-}
-.eyebrow {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #17b6d4;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
-  }
-  html {
-    scroll-behavior: auto;
-  }
-}
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(11, 42, 82, 0.12);
-}
-.site-header .header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.1rem 0;
-}
-.site-header .brand {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-.site-header .brand .brand-name {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1.1;
-  color: #0b2a52;
-}
-.site-header .brand .brand-name span {
-  color: #17b6d4;
-}
-.site-header .brand .brand-tag {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(14, 33, 54, 0.65);
-  margin-top: 0.3rem;
-}
-.site-header nav.main-nav ul {
-  display: flex;
-  gap: 2.2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.site-header nav.main-nav ul li a {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.92rem;
-  text-decoration: none;
-  color: #0e2136;
-  position: relative;
-  padding-bottom: 4px;
-}
-.site-header nav.main-nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: #17b6d4;
-  transition: width 0.2s ease;
-}
-.site-header nav.main-nav ul li a:hover,
-.site-header nav.main-nav ul li a.active {
-  color: #0b2a52;
-}
-.site-header nav.main-nav ul li a:hover::after,
-.site-header nav.main-nav ul li a.active::after {
-  width: 100%;
-}
-.site-header .nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-.site-header .nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.4rem;
-}
-.site-header .nav-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #0b2a52;
-  margin: 5px 0;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-.hero {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #f3f8fc 100%);
-  padding-top: 4.5rem;
-  padding-bottom: 5rem;
-}
-.hero .hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 3rem;
-  align-items: center;
-}
-.hero .hero-copy .status-line {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 1.1rem;
-}
-.hero .hero-copy .status-line .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #7fe3ef;
-  box-shadow: 0 0 0 0 rgba(127, 227, 239, 0.55);
-  animation: pulse-dot 2.2s ease-out infinite;
-}
-.hero .hero-copy h1 {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: clamp(2.1rem, 4vw, 3.4rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-  color: #0b2a52;
-  margin: 0 0 1.1rem;
-}
-.hero .hero-copy p.lead {
-  font-size: 1.05rem;
-  color: rgba(14, 33, 54, 0.65);
-  max-width: 46ch;
-  margin: 0 0 2rem;
-  line-height: 1.65;
-}
-.hero .hero-copy .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.hero .hero-copy .hero-actions .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.85rem 1.6rem;
-  border-radius: 6px;
-  border: 1.5px solid transparent;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
-  white-space: nowrap;
-  background: #17b6d4;
-  color: #061530;
-  box-shadow: 0 6px 18px rgba(23, 182, 212, 0.35);
-}
-.hero .hero-copy .hero-actions .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(23, 182, 212, 0.45);
-  background: #1cd7fa;
-}
-.hero .hero-copy .hero-actions .btn-primary:active {
-  transform: translateY(0);
-}
-.hero .hero-copy .hero-actions .btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.85rem 1.6rem;
-  border-radius: 6px;
-  border: 1.5px solid transparent;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
-  white-space: nowrap;
-  background: transparent;
-  color: #0b2a52;
-  border-color: rgba(11, 42, 82, 0.45);
-}
-.hero .hero-copy .hero-actions .btn-secondary:hover {
-  border-color: #0b2a52;
-  background: rgba(11, 42, 82, 0.08);
-}
-.hero .hero-art {
-  position: relative;
-  height: 360px;
-}
-.hero .hero-art svg {
-  width: 100%;
-  height: 100%;
-}
-.services {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-.services .section-head {
-  max-width: 640px;
-  margin: 0 0 3rem;
-}
-.services .section-head h2 {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.1;
-  color: #0b2a52;
-  margin: 0.6rem 0 0.8rem;
-}
-.services .section-head p {
-  color: rgba(14, 33, 54, 0.65);
-  margin: 0;
-}
-.services .services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-@media (max-width: 780px) {
-  .services .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.services .service-card {
-  background: #ffffff;
-  border: 1px solid rgba(11, 42, 82, 0.12);
-  border-radius: 14px;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-.services .service-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(23, 182, 212, 0.55);
-  box-shadow: 0 16px 30px rgba(11, 42, 82, 0.08);
-}
-.services .service-card .icon-badge {
-  width: 52px;
-  height: 52px;
-  border-radius: 6px;
-  background: rgba(23, 182, 212, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.services .service-card .icon-badge svg {
-  width: 26px;
-  height: 26px;
-}
-.services .service-card h3 {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1.1;
-  color: #0b2a52;
-  margin: 0;
-}
-.services .service-card ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 1;
-}
-.services .service-card ul li {
-  font-size: 0.92rem;
-  color: rgba(14, 33, 54, 0.65);
-  padding-left: 1.1rem;
-  position: relative;
-}
-.services .service-card ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.5em;
-  width: 6px;
-  height: 6px;
-  background: #17b6d4;
-  border-radius: 1px;
-  transform: rotate(45deg);
-}
-.services .service-card .card-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.85rem 1.6rem;
-  border-radius: 6px;
-  border: 1.5px solid transparent;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
-  white-space: nowrap;
-  background: rgba(11, 42, 82, 0.06);
-  color: #0b2a52;
-  border-color: rgba(11, 42, 82, 0.16);
-  padding: 0.65rem 1.3rem;
-  font-size: 0.85rem;
-  align-self: flex-start;
-}
-.services .service-card .card-cta:hover {
-  background: #0b2a52;
-  color: #ffffff;
-}
-.why-us {
-  background: #081f45;
-  background-image: radial-gradient(circle at 15% 20%, rgba(23, 182, 212, 0.1), transparent 40%), radial-gradient(circle at 85% 80%, rgba(20, 86, 163, 0.18), transparent 45%);
-  color: #ffffff;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-.why-us .section-head {
-  max-width: 640px;
-  margin: 0 0 3rem;
-}
-.why-us .section-head .eyebrow {
-  color: #7fe3ef;
-}
-.why-us .section-head h2 {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.1;
-  color: #ffffff;
-  margin: 0.6rem 0 0.8rem;
-}
-.why-us .section-head p {
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-}
-.why-us .why-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-@media (max-width: 900px) {
-  .why-us .why-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 540px) {
-  .why-us .why-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.why-us .why-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  padding: 1.8rem 1.5rem;
-}
-.why-us .why-card .icon-badge {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: rgba(23, 182, 212, 0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-.why-us .why-card .icon-badge svg {
-  width: 22px;
-  height: 22px;
-  stroke: #7fe3ef;
-}
-.why-us .why-card h3 {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.1;
-  margin: 0 0 0.5rem;
-  color: #ffffff;
-}
-.why-us .why-card p {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.68);
-  margin: 0;
-  line-height: 1.55;
-}
-.contact {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background: #f3f8fc;
-}
-.contact .contact-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2.5rem;
-}
-@media (max-width: 860px) {
-  .contact .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.contact .contact-col {
-  background: #ffffff;
-  border: 1px solid rgba(11, 42, 82, 0.12);
-  border-radius: 14px;
-  padding: 2.4rem;
-}
-.contact h2 {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.1;
-  color: #0b2a52;
-  margin: 0 0 1.4rem;
-}
-.contact .contact-list {
-  list-style: none;
-  margin: 0 0 1.6rem;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-.contact .contact-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
-}
-.contact .contact-list li .icon-badge {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(23, 182, 212, 0.14);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.contact .contact-list li .icon-badge svg {
-  width: 18px;
-  height: 18px;
-}
-.contact .contact-list li a,
-.contact .contact-list li span.addr {
-  font-size: 0.96rem;
-  color: #0e2136;
-  text-decoration: none;
-  line-height: 1.5;
-}
-.contact .contact-list li a:hover {
-  color: #17b6d4;
-}
-.contact .directions-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.85rem 1.6rem;
-  border-radius: 6px;
-  border: 1.5px solid transparent;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
-  white-space: nowrap;
-  background: #17b6d4;
-  color: #061530;
-  box-shadow: 0 6px 18px rgba(23, 182, 212, 0.35);
-}
-.contact .directions-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(23, 182, 212, 0.45);
-  background: #1cd7fa;
-}
-.contact .directions-btn:active {
-  transform: translateY(0);
-}
-.contact .qr-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.contact .qr-col .qr-frame {
-  background: #ffffff;
-  border: 1px solid rgba(11, 42, 82, 0.12);
-  padding: 1.2rem;
-  border-radius: 14px;
-  margin-bottom: 0.9rem;
-}
-.contact .qr-col .qr-label {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #0b2a52;
-  margin-bottom: 1.6rem;
-}
-.contact .map-frame {
-  width: 100%;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(11, 42, 82, 0.12);
-}
-.contact .map-frame iframe {
-  width: 100%;
-  height: 230px;
-  border: 0;
-  display: block;
-}
-.site-footer {
-  background: #061530;
-  color: rgba(255, 255, 255, 0.78);
-  padding: 3.2rem 0 2rem;
-}
-.site-footer .footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 1.5rem;
-}
-.site-footer .footer-top .footer-message {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.1;
-  color: #ffffff;
-  max-width: 380px;
-}
-.site-footer .footer-top .footer-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-}
-.site-footer .footer-top .footer-contact a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.78);
-}
-.site-footer .footer-top .footer-contact a:hover {
-  color: #7fe3ef;
-}
-.site-footer .footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-@media (max-width: 860px) {
-  .site-header nav.main-nav {
-    display: none;
-  }
-  .site-header .nav-toggle {
-    display: block;
-  }
-  .hero .hero-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero .hero-art {
-    height: 260px;
-    order: -1;
-  }
-}
-body.nav-open .site-header nav.main-nav {
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: #ffffff;
-  border-bottom: 1px solid rgba(11, 42, 82, 0.12);
-}
-body.nav-open .site-header nav.main-nav ul {
-  flex-direction: column;
-  gap: 0;
-  padding: 0.5rem 1.75rem 1.25rem;
-}
-body.nav-open .site-header nav.main-nav ul li a {
-  display: block;
-  padding: 0.75rem 0;
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Small extras not worth a LESS rule of their own */
-.icon-badge svg { stroke: #0b2a52; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.why-us .icon-badge svg { stroke: #7fe3ef; }
-.contact .icon-badge svg { stroke: #0b6fa3; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bytecare NJ Technology — Kamrup (R), Assam | Repair, Photo Printing &amp; CCTV</title>
+  <meta name="description" content="Bytecare NJ Technology — laptop repair, PC repair, passport photo printing and CCTV installation in Kamrup (R), Bullapar, VIP, Assam. Track your repair status online!">
+  <link rel="icon" type="image/png" href="/images/bytecare-logo.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/bytecare-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('bytecare-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 <body>
+
+<!-- ============ INITIAL TECHNICIAN LOADING SCREEN ============ -->
+<div class="site-loader" id="siteLoader" role="status" aria-live="polite" aria-label="Technician Bench Boot Sequence — Bytecare NJ Technology">
+  <div class="site-loader-grid" aria-hidden="true"></div>
+  <div class="site-loader-noise" aria-hidden="true"></div>
+  <div class="site-loader-vignette" aria-hidden="true"></div>
+
+  <div class="site-loader-console">
+    <!-- Top Telemetry Bar -->
+    <div class="site-loader-console-top">
+      <div class="loader-top-left">
+        <span class="loader-live-dot" aria-hidden="true"></span>
+        <span class="loader-kicker">BENCH OS // DIAGNOSTIC SEQUENCE</span>
+      </div>
+      <div class="loader-top-right">
+        <span class="loader-telemetry-badge">19.5V DC</span>
+        <span class="loader-telemetry-badge">SMPS: OK</span>
+        <button type="button" class="loader-skip-btn" id="loaderSkipBtn" title="Skip boot sequence (Esc)">SKIP [ESC]</button>
+      </div>
+    </div>
+
+    <!-- Centerpiece: Hardware Diagnostic Core -->
+    <div class="loader-instrument" aria-hidden="true">
+      <!-- Rotating Calibrated Reticles -->
+      <div class="loader-reticle loader-reticle-outer">
+        <span class="reticle-tick reticle-tick-0">0°</span>
+        <span class="reticle-tick reticle-tick-90">90°</span>
+        <span class="reticle-tick reticle-tick-180">180°</span>
+        <span class="reticle-tick reticle-tick-270">270°</span>
+      </div>
+      <div class="loader-reticle loader-reticle-mid"></div>
+      <div class="loader-reticle loader-reticle-inner"></div>
+
+      <!-- Laser Scanner Line -->
+      <div class="loader-scanline"></div>
+
+      <!-- Microcontroller BGA Package -->
+      <div class="loader-chip-container">
+        <!-- SVG Microprocessor with Circuit Traces & Pins -->
+        <svg class="loader-chip" viewBox="0 0 160 160" fill="none">
+          <circle cx="80" cy="80" r="76" stroke="rgba(23, 182, 212, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
+          <path d="M46 12v16 M60 12v16 M74 12v16 M86 12v16 M100 12v16 M114 12v16" stroke="#17b6d4" stroke-width="3" stroke-linecap="round"/>
+          <path d="M46 132v16 M60 132v16 M74 132v16 M86 132v16 M100 132v16 M114 132v16" stroke="#17b6d4" stroke-width="3" stroke-linecap="round"/>
+          <path d="M12 46h16 M12 60h16 M12 74h16 M12 86h16 M12 100h16 M12 114h16" stroke="#17b6d4" stroke-width="3" stroke-linecap="round"/>
+          <path d="M132 46h16 M132 60h16 M132 74h16 M132 86h16 M132 100h16 M132 114h16" stroke="#17b6d4" stroke-width="3" stroke-linecap="round"/>
+
+          <rect x="28" y="28" width="104" height="104" rx="14" fill="#081f45" stroke="#17b6d4" stroke-width="2.5"/>
+          <rect x="42" y="42" width="76" height="76" rx="8" fill="#061530" stroke="rgba(127, 227, 239, 0.7)" stroke-width="1.8"/>
+
+          <circle cx="38" cy="38" r="3" fill="#7fe3ef"/>
+          <circle cx="122" cy="38" r="3" fill="#7fe3ef"/>
+          <circle cx="38" cy="122" r="3" fill="#7fe3ef"/>
+          <circle cx="122" cy="122" r="3" fill="#7fe3ef"/>
+
+          <path d="M52 52 L66 66 H94 L108 52" stroke="rgba(23, 182, 212, 0.55)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M52 108 L66 94 H94 L108 108" stroke="rgba(23, 182, 212, 0.55)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M52 80 H66 M94 80 H108" stroke="rgba(23, 182, 212, 0.6)" stroke-width="2"/>
+
+          <circle cx="80" cy="80" r="16" fill="rgba(23, 182, 212, 0.2)" stroke="#7fe3ef" stroke-width="2"/>
+          <circle cx="80" cy="80" r="7" fill="#7fe3ef" class="loader-die-core"/>
+        </svg>
+
+        <span class="loader-instrument-label loader-label-top">CPU/BGA CORE</span>
+        <span class="loader-instrument-label loader-label-bottom">STATION: KMP-01</span>
+      </div>
+
+      <!-- Live Oscilloscope Waveform Display -->
+      <div class="loader-oscilloscope">
+        <div class="oscilloscope-screen">
+          <svg class="oscilloscope-wave" viewBox="0 0 160 36" fill="none">
+            <path class="wave-grid" d="M0 18 H160 M40 0 V36 M80 0 V36 M120 0 V36"/>
+            <path class="wave-trace" d="M0 18 Q 20 2, 40 18 T 80 18 T 120 18 T 160 18"/>
+            <path class="wave-pulse" d="M0 18 L30 18 L35 4 L42 32 L48 10 L54 22 L60 18 L160 18"/>
+          </svg>
+          <div class="oscilloscope-meta">
+            <span>CH1: 1.2Vpp</span>
+            <span class="osc-freq">24.00 MHz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand Identity -->
+    <div class="site-loader-brand">
+      <span class="loader-brand-name">BYTE<span>CARE</span> NJ</span>
+      <span class="loader-brand-tag">Electronics Diagnostic &amp; IT Service Bench</span>
+    </div>
+
+    <!-- Live Terminal Stream Logs -->
+    <div class="loader-terminal-box">
+      <div class="terminal-line terminal-prev" id="loaderTerminalPrev">POST: Initializing diagnostic bus... [OK]</div>
+      <div class="terminal-line terminal-current">
+        <span class="terminal-prompt">&gt;</span>
+        <span id="loaderStatusText">Waking repair bench instruments...</span>
+        <span class="terminal-cursor">_</span>
+      </div>
+    </div>
+
+    <!-- Progress Meter -->
+    <div class="loader-status-row">
+      <span class="loader-status-label">HARDWARE BENCH BOOT</span>
+      <span id="loaderProgressText" class="loader-percent">00%</span>
+    </div>
+
+    <!-- Multi-Segmented Progress Track -->
+    <div class="loader-segments" aria-hidden="true" id="loaderSegments">
+      <span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span>
+      <span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span>
+    </div>
+
+    <!-- Bottom Telemetry Badges -->
+    <div class="loader-telemetry" aria-hidden="true">
+      <span>CHIP-LEVEL: <b>READY</b></span>
+      <span>CCTV SURV: <b>SYNCED</b></span>
+      <span>BENCH: <b>KAMRUP (R), ASSAM</b></span>
+    </div>
+  </div>
+</div>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="container header-row">
-    <div class="brand">
-      <span class="brand-name">BYTE<span>CARE</span> NJ</span>
-      <span class="brand-tag">Smart Solutions, Reliable Service</span>
-    </div>
+    <a href="#" class="brand" aria-label="Bytecare NJ Technology Home">
+      <img src="/images/bytecare-logo.png" alt="Bytecare NJ Technology" class="brand-logo-img">
+    </a>
 
     <nav class="main-nav" id="mainNav">
       <ul>
         <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery" class="nav-link">Workshop Gallery</a></li>
+        <li><a href="#track" class="nav-link">Track Repair</a></li>
         <li><a href="#why-us" class="nav-link">Why Us</a></li>
-        <li><a href="#location" class="nav-link">Location</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#location" class="nav-link">Location &amp; Contact</a></li>
       </ul>
     </nav>
 
     <div class="nav-actions">
+      <!-- Dark / Light Mode Toggle -->
+      <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light / Dark mode" title="Toggle Light / Dark mode">
+        <span class="toggle-icon-sun" aria-hidden="true">☀️</span>
+        <span class="toggle-icon-moon" aria-hidden="true">🌙</span>
+      </button>
+
+      <!-- WhatsApp Direct Button -->
+      <a href="https://wa.me/918638594006?text=Hello%20Bytecare%20NJ%2C%20I%20have%20an%20inquiry%20regarding%20your%20services." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-sm" title="Chat on WhatsApp (+91 86385 94006)">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <!-- Primary Action -->
+      <button class="btn-primary btn-sm" id="openBookingBtn">Book Repair / Survey</button>
+
+      <!-- Mobile Hamburger -->
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -714,21 +186,25 @@ body.nav-open .site-header nav.main-nav ul li a {
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="container hero-grid">
-    <div class="hero-copy reveal">
+    <div class="hero-copy">
       <div class="status-line">
         <span class="dot"></span>
-        <span class="eyebrow">Goalpara · Assam — Systems Online</span>
+        <span class="eyebrow">Kamrup (R) · Assam — Systems Online</span>
       </div>
       <h1>One stop solution for all your tech needs</h1>
-      <p class="lead">Welcome to Bytecare NJ, where technology meets reliable service in Goalpara, Assam. From a cracked screen to a new CCTV setup, we keep your devices — and your business — running.</p>
+      <p class="lead">Welcome to Bytecare NJ, where technology meets reliable service across Kamrup (R), Assam. From laptop screen replacements to CCTV setups and instant passport photos, we keep your devices and business running smoothly.</p>
       <div class="hero-actions">
-        <a href="#services" class="btn-primary">Book a Repair</a>
-        <a href="tel:+919707701954" class="btn-secondary">Call +91 97077 01954</a>
+        <button class="btn-primary" onclick="openBookingModal()">Book a Repair</button>
+        <a href="https://wa.me/918638594006?text=Hello%20Bytecare%20NJ%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+          <span>WhatsApp Chat</span>
+        </a>
+        <a href="#track" class="btn-secondary">Track Status</a>
+        <a href="tel:+918638594006" class="btn-secondary">Call +91 86385 94006</a>
       </div>
     </div>
 
-    <div class="hero-art reveal">
-      <!-- Signature element: a circuit trace linking device icons, standing in for the flyer's side panel -->
+    <div class="hero-art">
       <svg viewBox="0 0 420 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M40 300 H120 V220 H210 V140 H300 V60 H380" stroke="#17b6d4" stroke-width="2" stroke-dasharray="6 6" opacity="0.55"/>
         <circle cx="40" cy="300" r="5" fill="#7fe3ef"/>
@@ -736,28 +212,25 @@ body.nav-open .site-header nav.main-nav ul li a {
         <circle cx="210" cy="140" r="5" fill="#7fe3ef"/>
         <circle cx="300" cy="60" r="5" fill="#7fe3ef"/>
 
-        <!-- laptop -->
+        <!-- Laptop -->
         <g transform="translate(4,268)">
           <rect x="0" y="0" width="72" height="46" rx="4" fill="#0b2a52"/>
           <rect x="6" y="6" width="60" height="34" rx="2" fill="#eaf7fb"/>
           <rect x="-6" y="46" width="84" height="8" rx="2" fill="#123a6b"/>
         </g>
-
-        <!-- desktop tower -->
+        <!-- Desktop -->
         <g transform="translate(84,178)">
           <rect x="0" y="0" width="46" height="60" rx="5" fill="#0b2a52"/>
           <rect x="8" y="10" width="30" height="4" fill="#17b6d4"/>
           <circle cx="23" cy="46" r="5" fill="#17b6d4"/>
         </g>
-
-        <!-- printer / photo -->
+        <!-- Photo Printer -->
         <g transform="translate(174,98)">
           <rect x="0" y="10" width="66" height="34" rx="4" fill="#0b2a52"/>
           <rect x="14" y="0" width="38" height="16" rx="2" fill="#123a6b"/>
           <rect x="16" y="44" width="34" height="22" fill="#ffffff" stroke="#0b2a52" stroke-width="2"/>
         </g>
-
-        <!-- cctv camera -->
+        <!-- CCTV Camera -->
         <g transform="translate(300,10)">
           <rect x="0" y="14" width="52" height="20" rx="6" fill="#0b2a52"/>
           <circle cx="46" cy="24" r="7" fill="#17b6d4"/>
@@ -768,74 +241,258 @@ body.nav-open .site-header nav.main-nav ul li a {
   </div>
 </section>
 
+<!-- ============ REPAIR TRACKER WIDGET ============ -->
+<section class="tracker-section" id="track">
+  <div class="container">
+    <div class="tracker-card">
+      <div class="tracker-header">
+        <div>
+          <span class="eyebrow" style="color: #7fe3ef;">Live Service Portal</span>
+          <h2>Track Your Repair Status</h2>
+          <p>Enter your Tracking ID (e.g. <code>BC-8942-KMR</code>) or Mobile Phone Number below:</p>
+        </div>
+        <div>
+          <button class="btn-primary btn-sm" onclick="trackSample('BC-8942-KMR')">Try Demo ID: BC-8942-KMR</button>
+        </div>
+      </div>
+
+      <form id="trackerForm" class="tracker-form">
+        <div class="tracker-input-group">
+          <input type="text" id="trackInput" class="tracker-input" placeholder="Tracking ID or 10-digit Phone..." required>
+        </div>
+        <button type="submit" class="btn-primary">Track Status</button>
+      </form>
+
+      <!-- Results Container -->
+      <div id="trackerResult" style="display: none;"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SERVICES ============ -->
 <section class="services" id="services">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">What we fix</span>
-      <h2>Four services, one shop</h2>
-      <p>Everything under one roof in Goalpara — walk in, or book ahead and skip the wait.</p>
+    <div class="section-head">
+      <span class="eyebrow">Our Core Solutions</span>
+      <h2>Four services, one expert shop</h2>
+      <p>Everything under one roof in Kamrup (R) — walk in anytime, or book online to skip the wait.</p>
     </div>
 
-    <div class="services-grid">
+    <div class="services-grid" id="servicesGrid">
 
-      <!-- Card 1: Laptop Repair -->
-      <article class="service-card reveal">
+      <!-- 1. Laptop Repair (Multi-Image Support) -->
+      <article class="service-card">
+        <div class="service-img-wrapper" data-service-id="laptop-repair">
+          <div class="service-slide is-active">
+            <img src="/images/cracked-screen.jpg" alt="Screen Replacement at Bytecare NJ Kamrup (R)">
+          </div>
+          <div class="service-slide">
+            <img src="/images/dell-motherboard.jpg" alt="Dell Motherboard Soldering Repair">
+          </div>
+          <div class="service-slide">
+            <img src="/images/laptop-hinge.jpg" alt="Laptop Hinge and Body Repair">
+          </div>
+          <div class="service-slide">
+            <img src="/images/laptop-keyboard.jpg" alt="Laptop Keyboard Replacement">
+          </div>
+          <span class="service-img-tag">Repair Bench — Screen Swap</span>
+          <button type="button" class="service-arrow service-arrow-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="service-arrow service-arrow-next" aria-label="Next image">›</button>
+          <div class="service-nav-dots">
+            <button type="button" class="service-nav-dot is-active" aria-label="Slide 1"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 2"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 3"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 4"></button>
+          </div>
+        </div>
         <div class="icon-badge">
           <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 18h20l-1.5 2.5a1 1 0 0 1-.9.5H4.4a1 1 0 0 1-.9-.5L2 18Z"/></svg>
         </div>
         <h3>Laptop Repair</h3>
         <ul>
-          <li>Hardware &amp; software repair</li>
-          <li>Screen replacement</li>
-          <li>Fast &amp; reliable service</li>
+          <li>Screen &amp; LCD panel replacement (Dell, HP, Lenovo, ASUS)</li>
+          <li>Motherboard chip repair &amp; liquid damage restoration</li>
+          <li>Battery, keyboard &amp; charger replacement with warranty</li>
         </ul>
-        <a href="tel:+919707701954" class="card-cta">Book Now</a>
+        <div style="margin-top: auto; padding-top: 1rem;">
+          <button class="btn-primary btn-sm" style="width: 100%; justify-content: center;" onclick="openBookingModal('Laptop Repair')">Book Repair</button>
+        </div>
       </article>
 
-      <!-- Card 2: PC Repair -->
-      <article class="service-card reveal">
+      <!-- 2. PCs Repair (Multi-Image Support) -->
+      <article class="service-card">
+        <div class="service-img-wrapper" data-service-id="pc-repair">
+          <div class="service-slide is-active">
+            <img src="/images/pc-rgb-workbench.jpg" alt="PC Diagnostics & RGB Workbench at Bytecare NJ">
+          </div>
+          <div class="service-slide">
+            <img src="/images/desktop-motherboard.jpg" alt="Desktop Motherboard Overhaul">
+          </div>
+          <div class="service-slide">
+            <img src="/images/hp-disassembly.jpg" alt="Desktop Diagnostics Bench">
+          </div>
+          <span class="service-img-tag">Custom Rig &amp; SMPS Workbench</span>
+          <button type="button" class="service-arrow service-arrow-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="service-arrow service-arrow-next" aria-label="Next image">›</button>
+          <div class="service-nav-dots">
+            <button type="button" class="service-nav-dot is-active" aria-label="Slide 1"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 2"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 3"></button>
+          </div>
+        </div>
         <div class="icon-badge">
           <svg viewBox="0 0 24 24"><rect x="4" y="3" width="12" height="15" rx="1.5"/><path d="M8 21h4M10 18v3"/><circle cx="10" cy="8" r="2"/></svg>
         </div>
         <h3>PCs Repair</h3>
         <ul>
-          <li>Desktop upgrades &amp; diagnostics</li>
-          <li>Power supply replacement</li>
-          <li>Virus &amp; malware clean-up</li>
+          <li>Desktop SMPS &amp; power supply replacement</li>
+          <li>Virus, malware &amp; ransomware removal</li>
+          <li>Custom gaming &amp; office PC upgrades</li>
         </ul>
-        <a href="tel:+919707701954" class="card-cta">Book Now</a>
+        <div style="margin-top: auto; padding-top: 1rem;">
+          <button class="btn-primary btn-sm" style="width: 100%; justify-content: center;" onclick="openBookingModal('PC Repair')">Book Repair</button>
+        </div>
       </article>
 
-      <!-- Card 3: Passport Photo Printing -->
-      <article class="service-card reveal">
+      <!-- 3. Passport Size Photo Printing (Dedicated Related Photos) -->
+      <article class="service-card">
+        <div class="service-img-wrapper" data-service-id="passport-photo">
+          <div class="service-slide is-active">
+            <img src="/images/passport-photos.jpg" alt="Instant Passport Size Photo Printing Studio at Bytecare NJ">
+          </div>
+          <div class="service-slide">
+            <img src="/images/storage-ram-upgrade.jpg" alt="Digital Photo Finishing Counter">
+          </div>
+          <span class="service-img-tag">Instant Photo Studio Setup</span>
+          <button type="button" class="service-arrow service-arrow-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="service-arrow service-arrow-next" aria-label="Next image">›</button>
+          <div class="service-nav-dots">
+            <button type="button" class="service-nav-dot is-active" aria-label="Slide 1"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 2"></button>
+          </div>
+        </div>
         <div class="icon-badge">
           <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.4"/><rect x="7" y="3" width="10" height="4" rx="1"/></svg>
         </div>
         <h3>Passport Size Photo Printing</h3>
         <ul>
-          <li>Hardware &amp; software printing</li>
-          <li>High quality prints</li>
-          <li>Instant printing</li>
-          <li>All size photos available</li>
+          <li>Instant high-gloss photo printing (5 mins)</li>
+          <li>All official passport, visa &amp; Govt size specs</li>
+          <li>Digital soft-copy sent straight to WhatsApp</li>
         </ul>
-        <a href="#location" class="card-cta">Visit Our Shop</a>
+        <div style="margin-top: auto; padding-top: 1rem;">
+          <button class="btn-primary btn-sm" style="width: 100%; justify-content: center;" onclick="openBookingModal('Passport Photo Printing')">Order Photo Print</button>
+        </div>
       </article>
 
-      <!-- Card 4: CCTV Installation -->
-      <article class="service-card reveal">
+      <!-- 4. CCTV Installation (Dedicated Related Photos) -->
+      <article class="service-card">
+        <div class="service-img-wrapper" data-service-id="cctv-installation">
+          <div class="service-slide is-active">
+            <img src="/images/cctv-surveillance.jpg" alt="HD CCTV Security Camera Systems Installation at Bytecare NJ">
+          </div>
+          <div class="service-slide">
+            <img src="/images/desktop-motherboard.jpg" alt="CCTV DVR Security Monitoring Configuration">
+          </div>
+          <span class="service-img-tag">HD CCTV &amp; Security Setup</span>
+          <button type="button" class="service-arrow service-arrow-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="service-arrow service-arrow-next" aria-label="Next image">›</button>
+          <div class="service-nav-dots">
+            <button type="button" class="service-nav-dot is-active" aria-label="Slide 1"></button>
+            <button type="button" class="service-nav-dot" aria-label="Slide 2"></button>
+          </div>
+        </div>
         <div class="icon-badge">
           <svg viewBox="0 0 24 24"><rect x="2" y="9" width="13" height="7" rx="2.5"/><circle cx="12" cy="12.5" r="2.2"/><path d="M15 11l6-3v9l-6-3"/></svg>
         </div>
         <h3>CCTV Installation</h3>
         <ul>
-          <li>CCTV camera installation</li>
-          <li>Remote viewing setup</li>
-          <li>Home | Office | Shop security</li>
+          <li>Free on-site security survey in Kamrup (R)</li>
+          <li>Full HD / 4K IP camera &amp; DVR/NVR setup</li>
+          <li>Remote live viewing on iPhone &amp; Android</li>
         </ul>
-        <a href="#contact" class="card-cta">Request a Site Survey</a>
+        <div style="margin-top: auto; padding-top: 1rem;">
+          <button class="btn-primary btn-sm" style="width: 100%; justify-content: center;" onclick="openBookingModal('CCTV Installation')">Request Site Survey</button>
+        </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKSHOP GALLERY SECTION ============ -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color: #7fe3ef;">Real Repairs, Real Experience</span>
+      <h2>Inside Bytecare NJ Workshop</h2>
+      <p>Actual photos from our repair workbench in Kamrup (R), Assam — hardware diagnostics, chip-level soldering, screen replacements &amp; custom PC builds.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="/images/cracked-screen.jpg" alt="Cracked ThinkPad Display Screen Replacement">
+        <div class="gallery-overlay">
+          <div class="title">Screen Replacement</div>
+          <div class="sub">Lenovo ThinkPad FHD panel swap</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/dell-motherboard.jpg" alt="Dell Laptop Chip-Level Motherboard Repair">
+        <div class="gallery-overlay">
+          <div class="title">Chip-Level Repair</div>
+          <div class="sub">Dell motherboard copper heatsink rebuild</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/cctv-surveillance.jpg" alt="Commercial CCTV Security System Monitoring">
+        <div class="gallery-overlay">
+          <div class="title">CCTV Surveillance Hub</div>
+          <div class="sub">HD IP camera network &amp; DVR configuration</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/passport-photos.jpg" alt="Instant High-Gloss Passport Size Photo Printing Studio">
+        <div class="gallery-overlay">
+          <div class="title">Passport Photo Studio</div>
+          <div class="sub">Instant biometric ID photo printing</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/pc-rgb-workbench.jpg" alt="PC RGB Cooler Fan & Workbench Testing">
+        <div class="gallery-overlay">
+          <div class="title">Custom PC Workbench</div>
+          <div class="sub">RGB cooler &amp; SMPS voltage testing</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/technician-desk.jpg" alt="Lead Technician Jyotimoni Bezbaruah at Bytecare NJ Repair Desk">
+        <div class="gallery-overlay">
+          <div class="title">Tech Counter &amp; Diagnostics</div>
+          <div class="sub">Jyotimoni Bezbaruah at repair desk</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/storage-ram-upgrade.jpg" alt="1TB Western Digital Hard Drive & RAM Installation">
+        <div class="gallery-overlay">
+          <div class="title">Storage &amp; RAM Upgrade</div>
+          <div class="sub">WD 1TB HDD &amp; DDR4 RAM upgrade</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/hp-disassembly.jpg" alt="HP ProBook Laptop Motherboard Diagnostic">
+        <div class="gallery-overlay">
+          <div class="title">HP ProBook Diagnostics</div>
+          <div class="sub">Full motherboard cleanup &amp; thermal paste refresh</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -843,110 +500,148 @@ body.nav-open .site-header nav.main-nav ul li a {
 <!-- ============ WHY CHOOSE US ============ -->
 <section class="why-us" id="why-us">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Why Goalpara trusts us</span>
+    <div class="section-head">
+      <span class="eyebrow" style="color: #7fe3ef;">Why Kamrup (R) Trusts Us</span>
       <h2>Why Choose Bytecare NJ</h2>
-      <p>Four reasons customers come back to us instead of shipping devices out of town.</p>
+      <p>Four reasons local businesses and residents rely on us for fast, genuine service.</p>
     </div>
 
     <div class="why-grid">
-      <div class="why-card reveal">
-        <div class="icon-badge">
-          <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
+      <div class="why-card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Expert Technicians</h3>
-        <p>Trusted &amp; experienced hands on every laptop, PC and camera that comes through the door.</p>
+        <p>Trusted &amp; experienced hands on every laptop, PC, and camera that comes through our doors.</p>
       </div>
 
-      <div class="why-card reveal">
-        <div class="icon-badge">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9c.2.6.7 1.2 1.5 1.3h.1a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
-        </div>
-        <h3>Quality Service</h3>
-        <p>We use genuine parts — no shortcuts, so repairs last and warranties mean something.</p>
+      <div class="why-card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9c.2.6.7 1.2 1.5 1.3h.1a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></div>
+        <h3>Quality Genuine Parts</h3>
+        <p>We use OEM certified spare parts — no cheap knockoffs, so your repairs last with full warranty.</p>
       </div>
 
-      <div class="why-card reveal">
-        <div class="icon-badge">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-        </div>
+      <div class="why-card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
         <h3>Fast Turnaround</h3>
-        <p>Quick &amp; efficient diagnostics mean most repairs go out the same day.</p>
+        <p>Same-day diagnostic and express repairs keep your downtime to an absolute minimum.</p>
       </div>
 
-      <div class="why-card reveal">
-        <div class="icon-badge">
-          <svg viewBox="0 0 24 24"><path d="M8 12l3 3 5-6"/><path d="M2 12h4l2 3 3-6 2 4h5"/></svg>
-        </div>
-        <h3>Customer Satisfaction</h3>
-        <p>Our first priority — every job, from a screen swap to a full CCTV install.</p>
+      <div class="why-card">
+        <div class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 12l3 3 5-6"/><path d="M2 12h4l2 3 3-6 2 4h5"/></svg></div>
+        <h3>Complete Satisfaction</h3>
+        <p>Every single repair comes with quality assurance check before handing your device back.</p>
+      </div>
+    </div>
+
+    <!-- Owner / Lead Technician Profile Banner (Dynamically updated via Admin) -->
+    <div class="tech-profile-card" id="whyUsOwnerCard">
+      <div class="tech-avatar">
+        <img id="whyUsOwnerImg" src="/images/jyotimoni-passport.jpeg" alt="Jyotimoni Bezbaruah - Lead Technician Bytecare NJ">
+      </div>
+      <div class="tech-info">
+        <h4 id="whyUsOwnerName">Meet Jyotimoni Bezbaruah</h4>
+        <p id="whyUsOwnerBio">Lead Hardware Technician &amp; Founder at Bytecare NJ Technology — Kamrup (R), Assam</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT + LOCATION ============ -->
-<section class="contact" id="contact">
+<!-- ============ REVIEWS SECTION ============ -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-head" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <span class="eyebrow">Customer Feedback</span>
+        <h2>What Our Clients Say</h2>
+        <p>Verified reviews from local customers across Kamrup (R) &amp; surrounding areas.</p>
+      </div>
+      <button class="btn-secondary" onclick="openReviewModal()">Write a Review</button>
+    </div>
+
+    <div class="reviews-grid" id="reviewsGrid">
+      <!-- Reviews loaded via app.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT & LOCATION ============ -->
+<section class="contact" id="location">
   <div class="container">
     <div class="contact-grid">
 
-      <!-- Column 1: Reach Us -->
-      <div class="contact-col reveal" id="location">
+      <!-- Column 1: Contact Details & Form -->
+      <div class="contact-col">
         <h2>Contact Bytecare NJ</h2>
         <ul class="contact-list">
           <li>
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <a href="tel:+919707701954">+91 97077 01954</a>
+            <span class="icon-badge icon-badge-whatsapp"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg></span>
+            <div>
+              <strong>WhatsApp Support (Fastest):</strong><br>
+              <a href="https://wa.me/918638594006?text=Hello%20Bytecare%20NJ%2C%20I%20have%20an%20inquiry%20regarding%20your%20services." target="_blank" rel="noopener noreferrer" style="color: #25D366; font-weight: 600;">+91 86385 94006 (Chat Online)</a>
+            </div>
           </li>
           <li>
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <a href="tel:+918638594006">+91 86385 94006</a>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.4 2.2L8.1 10.2a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z"/></svg></span>
+            <div>
+              <strong>Primary Contact:</strong><br>
+              <a href="tel:+918638594006">+91 86385 94006</a>
+            </div>
           </li>
           <li>
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 4h16v16H4V4Z" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 6l8 7 8-7" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <a href="mailto:bezbaruah.jyotimoni1@gmail.com">bezbaruah.jyotimoni1@gmail.com</a>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+            <div>
+              <strong>Alternate Contact:</strong><br>
+              <a href="tel:+919707701954">+91 97077 01954</a>
+            </div>
           </li>
           <li>
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="#0b6fa3" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.3" stroke="#0b6fa3" fill="none" stroke-width="1.7"/></svg></span>
-            <span class="addr">Goalpara Guwahati Rd, Bullapar, VIP, 1st floor, Near Basuda Sweet, Goalpara, Assam 781015</span>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+            <div>
+              <strong>Email Address:</strong><br>
+              <a href="mailto:bezbaruah.jyotimoni1@gmail.com">bezbaruah.jyotimoni1@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div>
+              <strong>Shop Address:</strong><br>
+              <span class="addr">Kamrup (R), Bullapar, VIP, 1st floor, Near Basuda Sweet, Assam 781015</span>
+            </div>
           </li>
         </ul>
-        <a class="directions-btn" href="https://www.google.com/maps/search/?api=1&query=Goalpara+Guwahati+Rd%2C+Bullapar%2C+VIP%2C+Goalpara%2C+Assam+781015" target="_blank" rel="noopener">Get Directions</a>
+
+        <a class="btn-primary" style="width: 100%; justify-content: center;" href="https://www.google.com/maps/search/?api=1&query=Kamrup+%28R%29%2C+Bullapar%2C+VIP%2C+1st+floor%2C+Near+Basuda+Sweet%2C+Assam+781015" target="_blank" rel="noopener">
+          Get Google Maps Directions
+        </a>
       </div>
 
-      <!-- Column 2: Scan for Location -->
-      <div class="contact-col qr-col reveal">
-        <h2>Scan to Find Us</h2>
-        <div class="qr-frame">
-          <!-- Stylised QR placeholder — swap the pattern block for the flyer's real QR export -->
-          <svg width="150" height="150" viewBox="0 0 150 150" aria-label="QR code placeholder">
-            <rect width="150" height="150" fill="#fff"/>
-            <g fill="#0b2a52">
-              <rect x="10" y="10" width="34" height="34"/><rect x="18" y="18" width="18" height="18" fill="#fff"/><rect x="24" y="24" width="6" height="6" fill="#0b2a52"/>
-              <rect x="106" y="10" width="34" height="34"/><rect x="114" y="18" width="18" height="18" fill="#fff"/><rect x="120" y="24" width="6" height="6" fill="#0b2a52"/>
-              <rect x="10" y="106" width="34" height="34"/><rect x="18" y="114" width="18" height="18" fill="#fff"/><rect x="24" y="120" width="6" height="6" fill="#0b2a52"/>
-              <rect x="52" y="10" width="6" height="6"/><rect x="64" y="10" width="6" height="6"/><rect x="76" y="16" width="6" height="6"/><rect x="52" y="28" width="6" height="6"/>
-              <rect x="52" y="52" width="6" height="6"/><rect x="64" y="52" width="6" height="6"/><rect x="76" y="52" width="6" height="6"/><rect x="88" y="52" width="6" height="6"/>
-              <rect x="52" y="64" width="6" height="6"/><rect x="70" y="64" width="6" height="6"/><rect x="88" y="64" width="6" height="6"/>
-              <rect x="52" y="76" width="6" height="6"/><rect x="64" y="76" width="6" height="6"/><rect x="82" y="76" width="6" height="6"/>
-              <rect x="58" y="88" width="6" height="6"/><rect x="70" y="88" width="6" height="6"/><rect x="88" y="88" width="6" height="6"/>
-              <rect x="106" y="52" width="6" height="6"/><rect x="118" y="52" width="6" height="6"/><rect x="130" y="58" width="6" height="6"/>
-              <rect x="106" y="70" width="6" height="6"/><rect x="124" y="70" width="6" height="6"/>
-              <rect x="106" y="82" width="6" height="6"/><rect x="118" y="88" width="6" height="6"/><rect x="130" y="82" width="6" height="6"/>
-              <rect x="52" y="106" width="6" height="6"/><rect x="64" y="112" width="6" height="6"/><rect x="76" y="106" width="6" height="6"/>
-              <rect x="52" y="124" width="6" height="6"/><rect x="70" y="130" width="6" height="6"/><rect x="88" y="124" width="6" height="6"/>
-              <rect x="106" y="106" width="6" height="6"/><rect x="118" y="112" width="6" height="6"/><rect x="130" y="118" width="6" height="6"/><rect x="112" y="130" width="6" height="6"/><rect x="124" y="130" width="6" height="6"/>
-            </g>
-          </svg>
-        </div>
-        <span class="qr-label">Scan For Location</span>
+      <!-- Column 2: Send Message & Map -->
+      <div class="contact-col qr-col">
+        <h2 style="width: 100%; text-align: left;">Send Us a Message</h2>
+        <form id="contactForm" style="width: 100%; text-align: left;">
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" class="form-control" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Phone Number</label>
+            <input type="tel" id="contactPhone" class="form-control" placeholder="10-digit mobile number" required>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message / Inquiry</label>
+            <textarea id="contactMessage" class="form-control" rows="3" placeholder="How can we help you today?" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Send Inquiry</button>
+          <button type="button" id="contactWhatsAppBtn" class="btn-whatsapp" style="width: 100%; margin-top: 0.6rem; justify-content: center;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+            <span>Chat Directly on WhatsApp</span>
+          </button>
+        </form>
 
-        <div class="map-frame">
+        <div class="map-frame" style="margin-top: 1.8rem;">
           <iframe
             title="Bytecare NJ Technology location map"
-            src="https://www.google.com/maps?q=Goalpara+Guwahati+Rd,+Bullapar,+VIP,+Goalpara,+Assam+781015&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            src="https://www.google.com/maps?q=Kamrup+(R),+Bullapar,+VIP,+Assam+781015&output=embed"
+            loading="lazy">
           </iframe>
         </div>
       </div>
@@ -958,62 +653,188 @@ body.nav-open .site-header nav.main-nav ul li a {
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="container footer-top">
-    <div class="footer-message">We Care for Your TECHNOLOGY.</div>
+    <div class="footer-brand-wrap">
+      <img src="/images/bytecare-logo.png" alt="Bytecare NJ Technology" class="footer-logo-img">
+      <div class="footer-message">We Care for Your TECHNOLOGY.</div>
+    </div>
     <div class="footer-contact">
-      <a href="tel:+919707701954">+91 97077 01954</a>
+      <a href="https://wa.me/918638594006?text=Hello%20Bytecare%20NJ" target="_blank" rel="noopener noreferrer" style="color: #25D366; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem;">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+        WhatsApp: +91 86385 94006
+      </a>
+      <a href="tel:+918638594006">+91 86385 94006</a> | <a href="tel:+919707701954">+91 97077 01954</a>
       <a href="mailto:bezbaruah.jyotimoni1@gmail.com">bezbaruah.jyotimoni1@gmail.com</a>
-      <span>Goalpara Guwahati Rd, Bullapar, VIP, 1st floor, Near Basuda Sweet, Goalpara, Assam 781015</span>
+      <span>Kamrup (R), Bullapar, VIP, 1st floor, Near Basuda Sweet, Assam 781015</span>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2024 Bytecare NJ Technology. All rights reserved.</span>
-    <span>Goalpara, Assam</span>
+    <span>© 2026 Bytecare NJ Technology. All rights reserved. <a href="/admin.html" class="admin-discreet-link" title="Management Login" aria-label="Management Login">🔒</a></span>
+    <span>Kamrup (R), Assam</span>
   </div>
 </footer>
 
-<script>
-// Mobile nav toggle
-const navToggle = document.getElementById('navToggle');
-navToggle.addEventListener('click', () => {
-  const open = document.body.classList.toggle('nav-open');
-  navToggle.setAttribute('aria-expanded', open);
-});
+<!-- ============ MODALS ============ -->
 
-// Close mobile nav after tapping a link
-document.querySelectorAll('#mainNav a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.body.classList.remove('nav-open');
-  });
-});
+<!-- 1. Booking / Service Request Modal -->
+<div class="modal-backdrop" id="bookingModal">
+  <div class="modal-window">
+    <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+    <h2 style="font-family: var(--font-title); color: var(--color-navy-brand); margin-top: 0;">Book Service / Request Survey</h2>
+    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Fill out your service details and our team in Kamrup (R) will confirm your slot and assign a tracking ticket.</p>
 
-// Active nav link on scroll
-const sections = ['services', 'why-us', 'location', 'contact'].map(id => document.getElementById(id)).filter(Boolean);
-const navLinks = document.querySelectorAll('.nav-link');
-const setActive = () => {
-  let current = '';
-  sections.forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    if (rect.top <= 120) current = sec.id;
-  });
-  navLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-  });
-};
-window.addEventListener('scroll', setActive);
-setActive();
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="bookService">Service Type</label>
+        <select id="bookService" class="form-control" required>
+          <option value="Laptop Repair">Laptop Repair</option>
+          <option value="PC Repair">PC Repair</option>
+          <option value="Passport Photo Printing">Passport Size Photo Printing</option>
+          <option value="CCTV Installation">CCTV Installation &amp; Survey</option>
+        </select>
+      </div>
 
-// Scroll-reveal
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-revealEls.forEach(el => io.observe(el));
-</script>
+      <div class="form-group">
+        <label for="bookName">Customer Full Name *</label>
+        <input type="text" id="bookName" class="form-control" placeholder="e.g. Jyotirmoy Das" required>
+      </div>
 
+      <div class="form-group">
+        <label for="bookPhone">Mobile Phone Number *</label>
+        <input type="tel" id="bookPhone" class="form-control" placeholder="10-digit mobile number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bookEmail">Email Address (Optional)</label>
+        <input type="email" id="bookEmail" class="form-control" placeholder="name@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="bookDevice">Device Model / Equipment Details</label>
+        <input type="text" id="bookDevice" class="form-control" placeholder="e.g. Dell Inspiron 15 / 4 Camera Security setup">
+      </div>
+
+      <div class="form-group">
+        <label for="bookProblem">Problem / Requirement Description</label>
+        <textarea id="bookProblem" class="form-control" rows="3" placeholder="Describe issue (e.g. Broken screen, CCTV survey requested, photo size requested)"></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%;">Submit Booking &amp; Get Ticket</button>
+    </form>
+  </div>
+</div>
+
+<!-- 2. Write Review Modal -->
+<div class="modal-backdrop" id="reviewModal">
+  <div class="modal-window">
+    <button class="modal-close" onclick="closeReviewModal()">&times;</button>
+    <h2 style="font-family: var(--font-title); color: var(--color-navy-brand); margin-top: 0;">Write a Customer Review</h2>
+    <p style="font-size: 0.9rem; color: var(--color-text-muted);">Share your experience with Bytecare NJ Technology in Kamrup (R).</p>
+
+    <form id="reviewForm">
+      <div class="form-group">
+        <label for="revName">Your Name *</label>
+        <input type="text" id="revName" class="form-control" placeholder="e.g. Anupam Medhi" required>
+      </div>
+
+      <div class="form-group">
+        <label for="revLocation">Location / Area</label>
+        <input type="text" id="revLocation" class="form-control" placeholder="e.g. Mirza / Palashbari / Kamrup (R)" value="Kamrup (R)">
+      </div>
+
+      <div class="form-group">
+        <label for="revService">Service Received</label>
+        <select id="revService" class="form-control">
+          <option value="Laptop Repair">Laptop Repair</option>
+          <option value="PC Repair">PC Repair</option>
+          <option value="Passport Photo Printing">Passport Photo Printing</option>
+          <option value="CCTV Installation">CCTV Installation</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="revRating">Rating (1 to 5 Stars)</label>
+        <select id="revRating" class="form-control">
+          <option value="5">⭐⭐⭐⭐⭐ (5 Stars - Excellent)</option>
+          <option value="4">⭐⭐⭐⭐ (4 Stars - Good)</option>
+          <option value="3">⭐⭐⭐ (3 Stars - Average)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="revComment">Your Review *</label>
+        <textarea id="revComment" class="form-control" rows="3" placeholder="Tell us about your experience..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%;">Submit Review</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ FLOATING WHATSAPP CHAT WIDGET ============ -->
+<div class="whatsapp-widget-container" id="whatsappWidget">
+  <!-- Interactive Popup Chat Box -->
+  <div class="whatsapp-chat-box" id="whatsappChatBox">
+    <div class="whatsapp-chat-header">
+      <div class="whatsapp-avatar">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="#ffffff">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+        </svg>
+        <span class="whatsapp-online-dot"></span>
+      </div>
+      <div class="whatsapp-header-info">
+        <h4>Bytecare NJ Support</h4>
+        <span class="whatsapp-status-text">Online | +91 86385 94006</span>
+      </div>
+      <button class="whatsapp-close-btn" id="closeWhatsAppBox" aria-label="Close WhatsApp Chat">&times;</button>
+    </div>
+
+    <div class="whatsapp-chat-body">
+      <div class="whatsapp-message-bubble">
+        <p>👋 Hello! Welcome to Bytecare NJ Technology (Kamrup R).</p>
+        <p>How can we assist your laptop, PC, CCTV, or photo printing needs today?</p>
+        <span class="whatsapp-msg-time">Just now</span>
+      </div>
+
+      <div class="whatsapp-quick-chips">
+        <button type="button" class="wa-chip" data-msg="Hello Bytecare NJ, I would like to get a quote for Laptop / PC Repair.">💻 Laptop / PC Repair Quote</button>
+        <button type="button" class="wa-chip" data-msg="Hello Bytecare NJ, I need information about CCTV Installation & Survey in Kamrup (R).">📹 CCTV Installation &amp; Survey</button>
+        <button type="button" class="wa-chip" data-msg="Hello Bytecare NJ, I want to inquire about Passport Photo Printing.">🖨️ Passport Size Photo Printing</button>
+        <button type="button" class="wa-chip" data-msg="Hello Bytecare NJ, I want to check the status of my repair order.">🔍 Track My Repair Ticket</button>
+      </div>
+    </div>
+
+    <div class="whatsapp-chat-footer">
+      <div class="whatsapp-input-wrap">
+        <input type="text" id="whatsappCustomMsg" placeholder="Type a message to WhatsApp..." aria-label="Message for WhatsApp">
+        <button type="button" id="whatsappSendBtn" aria-label="Send message to WhatsApp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Trigger Button -->
+  <button class="whatsapp-float-trigger" id="whatsappFloatTrigger" aria-label="Chat on WhatsApp with Bytecare NJ (+91 86385 94006)" title="Chat on WhatsApp (+91 86385 94006)">
+    <span class="whatsapp-pulse"></span>
+    <span class="whatsapp-badge">1</span>
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="#ffffff">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.44 0-2.86-.38-4.11-1.12l-.3-.18-3.05.8 1.01-2.97-.2-.31a8.2 8.2 0 0 1-1.26-4.46c0-4.55 3.7-8.24 8.25-8.24zm4.52 11.64c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.65.81-.8 1-.15.19-.3.21-.55.08-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+    </svg>
+  </button>
+</div>
+
+<!-- Back to Top Floating Button -->
+<button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Firebase Cloud Firestore SDKs (Compat CDN) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="/js/firebase-config.js"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ const DB_FILE = path.join(DATA_DIR, 'db.json');
 const defaultData = {
   tickets: [
     {
-      id: "BC-8942-GLP",
+      id: "BC-8942-KMR",
       customerName: "Rahul Nath",
       phone: "9876543210",
       email: "rahul.nath@gmail.com",
@@ -21,7 +21,7 @@ const defaultData = {
       updatedAt: "2026-07-29T14:15:00.000Z"
     },
     {
-      id: "BC-7103-GLP",
+      id: "BC-7103-KMR",
       customerName: "Ankita Das",
       phone: "9707701954",
       email: "ankita.d@yahoo.com",
@@ -35,7 +35,7 @@ const defaultData = {
       updatedAt: "2026-07-29T11:00:00.000Z"
     },
     {
-      id: "BC-6520-GLP",
+      id: "BC-6520-KMR",
       customerName: "Bhabesh Kalita",
       phone: "8638594006",
       email: "bhabesh.store@gmail.com",
@@ -49,7 +49,7 @@ const defaultData = {
       updatedAt: "2026-07-26T16:30:00.000Z"
     },
     {
-      id: "BC-4019-GLP",
+      id: "BC-4019-KMR",
       customerName: "Manoj Choudhury",
       phone: "9435012345",
       email: "m.choudhury@rediffmail.com",
@@ -70,7 +70,7 @@ const defaultData = {
       phone: "9854011223",
       email: "sanjay.medhi@gmail.com",
       subject: "CCTV quotation for 8 camera setup in office",
-      message: "Hello Bytecare team, I need an estimate for installing 8 IP cameras with audio recording for our office near Goalpara College.",
+      message: "Hello Bytecare team, I need an estimate for installing 8 IP cameras with audio recording for our office in Kamrup (R).",
       status: "Unread",
       createdAt: "2026-07-29T12:00:00.000Z"
     },
@@ -89,9 +89,9 @@ const defaultData = {
     {
       id: "REV-1",
       name: "Pranjal Sharma",
-      location: "Goalpara Town",
+      location: "Mirza, Kamrup (R)",
       rating: 5,
-      comment: "Fastest laptop screen replacement in Goalpara! Very courteous technician and original spare part used.",
+      comment: "Fastest laptop screen replacement in Kamrup (R)! Very courteous technician and original spare part used.",
       service: "Laptop Repair",
       createdAt: "2026-07-20T10:00:00.000Z",
       approved: true
@@ -99,7 +99,7 @@ const defaultData = {
     {
       id: "REV-2",
       name: "Momita Rabha",
-      location: "VIP Road, Goalpara",
+      location: "VIP Road, Kamrup (R)",
       rating: 5,
       comment: "Got 16 passport size photos printed in under 10 minutes. Super sharp quality photo paper!",
       service: "Passport Photo Printing",
@@ -109,7 +109,7 @@ const defaultData = {
     {
       id: "REV-3",
       name: "Deepak Kumar",
-      location: "Bullapar",
+      location: "Palashbari, Kamrup (R)",
       rating: 5,
       comment: "Bytecare NJ installed 4 CCTV cameras at my pharmacy. Clean cable routing and mobile live preview works perfectly.",
       service: "CCTV Installation",
@@ -123,6 +123,12 @@ const defaultData = {
       title: "Laptop Repair",
       icon: "laptop",
       tagline: "Hardware & Software Diagnostics, Screen & Battery Replacement",
+      images: [
+        "/images/cracked-screen.jpg",
+        "/images/dell-motherboard.jpg",
+        "/images/laptop-hinge.jpg",
+        "/images/laptop-keyboard.jpg"
+      ],
       details: [
         "Screen & LCD replacement for all major brands (Dell, HP, Lenovo, ASUS, Acer)",
         "Motherboard chip-level repair & liquid damage restoration",
@@ -130,14 +136,18 @@ const defaultData = {
         "RAM & NVMe SSD speed upgrades with OS cloning",
         "Hinge repair & body fabrication"
       ],
-      estimatedTime: "Same Day — 24 Hours",
-      priceStarting: "₹499"
+      estimatedTime: "Same Day — 24 Hours"
     },
     {
       id: "pc-repair",
       title: "PCs Repair",
       icon: "desktop",
       tagline: "Custom Builds, Component Upgrades, Virus Clean-up & SMPS Repair",
+      images: [
+        "/images/pc-rgb-workbench.jpg",
+        "/images/desktop-motherboard.jpg",
+        "/images/hp-disassembly.jpg"
+      ],
       details: [
         "Desktop SMPS & Power Supply replacement",
         "Custom gaming & office PC assembly",
@@ -145,14 +155,17 @@ const defaultData = {
         "Overheating resolution & liquid cooling setup",
         "Data backup, recovery & Windows re-installation"
       ],
-      estimatedTime: "Same Day Turnaround",
-      priceStarting: "₹399"
+      estimatedTime: "Same Day Turnaround"
     },
     {
       id: "passport-photo",
       title: "Passport Size Photo Printing",
       icon: "camera",
       tagline: "Instant High-Gloss Prints, All Visa & Govt Format Dimensions",
+      images: [
+        "/images/passport-photos.jpg",
+        "/images/storage-ram-upgrade.jpg"
+      ],
       details: [
         "Instant passport, stamp & visa size photo printing",
         "Professional digital background enhancement & retouching",
@@ -160,14 +173,17 @@ const defaultData = {
         "Sets of 8, 16, 32, or 64 photo sheets",
         "Digital soft-copy sent straight to your WhatsApp or Email"
       ],
-      estimatedTime: "5 - 10 Minutes Instant",
-      priceStarting: "₹99"
+      estimatedTime: "5 - 10 Minutes Instant"
     },
     {
       id: "cctv-installation",
       title: "CCTV Installation",
       icon: "cctv",
       tagline: "HD Security Cameras, NVR/DVR Setup & Remote Phone Monitoring",
+      images: [
+        "/images/cctv-surveillance.jpg",
+        "/images/desktop-motherboard.jpg"
+      ],
       details: [
         "Free on-site security survey for Home, Office, or Shop",
         "Full HD 1080p & 4K IP Dome & Bullet camera setups",
@@ -175,10 +191,16 @@ const defaultData = {
         "Remote live viewing on Android, iPhone & Laptop",
         "Annual maintenance & camera realignment services"
       ],
-      estimatedTime: "1 — 2 Days Installation",
-      priceStarting: "₹7,999 (Complete Kit)"
+      estimatedTime: "1 — 2 Days Installation"
     }
-  ]
+  ],
+  ownerProfile: {
+    name: "Jyotimoni Bezbaruah",
+    role: "Lead Hardware Technician & Founder",
+    experience: "10+ Years Tech Expertise",
+    image: "/images/jyotimoni-passport.jpeg",
+    bio: "Certified electronics & hardware technician delivering precision diagnostics, chip-level micro-soldering, CCTV surveillance engineering, and instant photographic solutions across Kamrup (R), Assam."
+  }
 };
 
 function ensureDbExists() {
@@ -194,7 +216,15 @@ function readDb() {
   ensureDbExists();
   try {
     const raw = fs.readFileSync(DB_FILE, 'utf8');
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    // Ensure services and ownerProfile exist
+    if (!parsed.services || parsed.services.length === 0) {
+      parsed.services = defaultData.services;
+    }
+    if (!parsed.ownerProfile) {
+      parsed.ownerProfile = defaultData.ownerProfile;
+    }
+    return parsed;
   } catch (err) {
     console.error('Error reading DB, resetting to defaults:', err);
     return defaultData;
@@ -209,7 +239,7 @@ function writeDb(data) {
 // Helpers
 function generateTrackingId() {
   const randomNum = Math.floor(1000 + Math.random() * 9000);
-  return `BC-${randomNum}-GLP`;
+  return `BC-${randomNum}-KMR`;
 }
 
 module.exports = {
@@ -309,7 +339,7 @@ module.exports = {
     const newReview = {
       id: `REV-${Date.now().toString().slice(-4)}`,
       name: reviewData.name || 'Local Customer',
-      location: reviewData.location || 'Goalpara',
+      location: reviewData.location || 'Kamrup (R)',
       rating: parseInt(reviewData.rating, 10) || 5,
       comment: reviewData.comment || '',
       service: reviewData.service || 'Service',
@@ -333,6 +363,67 @@ module.exports = {
     return db.reviews[idx];
   },
 
+  // Services
+  getServices: () => {
+    const data = readDb();
+    return data.services || defaultData.services;
+  },
+  updateService: (id, updates) => {
+    const data = readDb();
+    if (!data.services) data.services = defaultData.services;
+    const idx = data.services.findIndex(s => s.id === id);
+    if (idx === -1) return null;
+
+    data.services[idx] = {
+      ...data.services[idx],
+      ...updates
+    };
+    writeDb(data);
+    return data.services[idx];
+  },
+  addServiceImage: (id, imageUrl) => {
+    const data = readDb();
+    if (!data.services) data.services = defaultData.services;
+    const idx = data.services.findIndex(s => s.id === id);
+    if (idx === -1) return null;
+
+    if (!Array.isArray(data.services[idx].images)) {
+      data.services[idx].images = [];
+    }
+    if (imageUrl && !data.services[idx].images.includes(imageUrl)) {
+      data.services[idx].images.push(imageUrl);
+    }
+    writeDb(data);
+    return data.services[idx];
+  },
+  removeServiceImage: (id, imageIndex) => {
+    const data = readDb();
+    if (!data.services) data.services = defaultData.services;
+    const idx = data.services.findIndex(s => s.id === id);
+    if (idx === -1) return null;
+
+    if (Array.isArray(data.services[idx].images) && data.services[idx].images[imageIndex] !== undefined) {
+      data.services[idx].images.splice(imageIndex, 1);
+    }
+    writeDb(data);
+    return data.services[idx];
+  },
+
+  // Owner Profile
+  getOwnerProfile: () => {
+    const data = readDb();
+    return data.ownerProfile || defaultData.ownerProfile;
+  },
+  updateOwnerProfile: (updates) => {
+    const data = readDb();
+    data.ownerProfile = {
+      ...(data.ownerProfile || defaultData.ownerProfile),
+      ...updates
+    };
+    writeDb(data);
+    return data.ownerProfile;
+  },
+
   // Stats
   getStats: () => {
     const db = readDb();
@@ -348,7 +439,8 @@ module.exports = {
       readyTickets,
       completedTickets,
       unreadContacts,
-      totalReviews: db.reviews.length
+      totalReviews: db.reviews.length,
+      totalServices: (db.services || []).length
     };
   }
 };
