@@ -263,6 +263,27 @@ async function saveTicketUpdate(id) {
   const estimatedCost = parseFloat(document.getElementById(`cost-${id}`).value) || 0;
   const techNotes = document.getElementById(`notes-${id}`).value;
 
+  let cloudUpdated = false;
+
+  // Direct client sync to Cloud Firestore first
+  if (window.BytecareFirebase && window.BytecareFirebase.isConfigured()) {
+    try {
+      const fsDb = window.BytecareFirebase.getDb();
+      if (fsDb) {
+        await fsDb.collection('tickets').doc(id).set({
+          status,
+          estimatedCost,
+          techNotes,
+          updatedAt: new Date().toISOString()
+        }, { merge: true });
+        cloudUpdated = true;
+        console.log(`⚡ [Client Firestore] Ticket ${id} updated.`);
+      }
+    } catch (fsErr) {
+      console.warn('Firestore direct ticket sync notice:', fsErr);
+    }
+  }
+
   try {
     const res = await fetch(`/api/admin/bookings/${id}`, {
       method: 'PATCH',
@@ -274,31 +295,25 @@ async function saveTicketUpdate(id) {
     });
     const data = await res.json();
 
-    if (data.success) {
+    if (data.success || cloudUpdated) {
       showToast(`Updated Ticket ${id}`, 'success');
       loadStats();
-
-      // Direct client sync to Cloud Firestore
-      if (window.BytecareFirebase && window.BytecareFirebase.isConfigured()) {
-        try {
-          const fsDb = window.BytecareFirebase.getDb();
-          if (fsDb) {
-            await fsDb.collection('tickets').doc(id).set({
-              status,
-              estimatedCost,
-              techNotes,
-              updatedAt: new Date().toISOString()
-            }, { merge: true });
-            console.log(`⚡ [Client Firestore] Ticket ${id} synced.`);
-          }
-        } catch (fsErr) {
-          console.warn('Firestore ticket sync notice:', fsErr);
-        }
-      }
-    } else {
-      showToast(data.error || 'Update failed', 'error');
+      return;
     }
   } catch (err) {
+    if (cloudUpdated) {
+      showToast(`Updated Ticket ${id}`, 'success');
+      loadStats();
+      return;
+    }
+    showToast('Failed to save update', 'error');
+    return;
+  }
+
+  if (cloudUpdated) {
+    showToast(`Updated Ticket ${id}`, 'success');
+    loadStats();
+  } else {
     showToast('Failed to save update', 'error');
   }
 }

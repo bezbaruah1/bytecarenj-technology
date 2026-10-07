@@ -68,14 +68,37 @@ app.post('/api/bookings', (req, res) => {
 });
 
 // Live repair tracking lookup
-app.get('/api/bookings/track/:identifier', (req, res) => {
+app.get('/api/bookings/track/:identifier', async (req, res) => {
   try {
     const { identifier } = req.params;
     if (!identifier) {
       return res.status(400).json({ success: false, error: 'Tracking ID or Phone number is required.' });
     }
 
-    const matches = db.getTicketByIdentifier(identifier);
+    let matches = db.getTicketByIdentifier(identifier);
+    if (matches.length === 0) {
+      // Direct Cloud Firestore lookup fallback
+      try {
+        const dbFs = fbSync.initFirestore();
+        if (dbFs) {
+          const { doc, getDoc, collection, query, where, getDocs } = require('firebase/firestore');
+          const cleanId = identifier.trim().toUpperCase();
+          const cleanPhone = identifier.trim().replace(/\D/g, '');
+
+          const docSnap = await getDoc(doc(dbFs, 'tickets', cleanId));
+          if (docSnap.exists()) {
+            matches = [docSnap.data()];
+          } else if (cleanPhone.length >= 6) {
+            const q = query(collection(dbFs, 'tickets'), where('phone', '==', cleanPhone));
+            const qSnap = await getDocs(q);
+            qSnap.forEach(d => matches.push(d.data()));
+          }
+        }
+      } catch (fsErr) {
+        console.warn('Firestore fallback track error:', fsErr);
+      }
+    }
+
     if (matches.length === 0) {
       return res.status(404).json({
         success: false,
@@ -171,14 +194,52 @@ app.get('/api/admin/stats', requireAdmin, (req, res) => {
 });
 
 // Admin get all repair tickets
-app.get('/api/admin/bookings', requireAdmin, (req, res) => {
-  res.json({ success: true, tickets: db.getTickets() });
+app.get('/api/admin/bookings', requireAdmin, async (req, res) => {
+  let tickets = db.getTickets();
+  try {
+    const dbFs = fbSync.initFirestore();
+    if (dbFs) {
+      const { collection, getDocs } = require('firebase/firestore');
+      const snap = await getDocs(collection(dbFs, 'tickets'));
+      const map = new Map();
+      tickets.forEach(t => map.set(t.id, t));
+      snap.forEach(d => map.set(d.id, d.data()));
+      tickets = Array.from(map.values());
+      tickets.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+    }
+  } catch (fsErr) {
+    console.warn('Firestore admin bookings query notice:', fsErr);
+  }
+  res.json({ success: true, tickets });
 });
 
 // Admin update repair ticket
-app.patch('/api/admin/bookings/:id', requireAdmin, (req, res) => {
+app.patch('/api/admin/bookings/:id', requireAdmin, async (req, res) => {
   const { id } = req.params;
-  const updated = db.updateTicket(id, req.body);
+  let updated = db.updateTicket(id, req.body);
+
+  if (!updated) {
+    // Check and update in Cloud Firestore directly
+    try {
+      const dbFs = fbSync.initFirestore();
+      if (dbFs) {
+        const { doc, getDoc, setDoc } = require('firebase/firestore');
+        const docRef = doc(dbFs, 'tickets', id);
+        const snap = await getDoc(docRef);
+        if (snap.exists()) {
+          updated = {
+            ...snap.data(),
+            ...req.body,
+            updatedAt: new Date().toISOString()
+          };
+          await setDoc(docRef, updated, { merge: true });
+        }
+      }
+    } catch (fsErr) {
+      console.warn('Firestore fallback update notice:', fsErr);
+    }
+  }
+
   if (!updated) {
     return res.status(404).json({ success: false, error: 'Ticket not found' });
   }
