@@ -171,7 +171,8 @@ async function loadTickets() {
   const tbody = document.getElementById('ticketsTableBody');
   if (!tbody) return;
 
-  let ticketsList = [];
+  try {
+    let ticketsList = [];
 
   try {
     const res = await fetch('/api/admin/bookings', {
