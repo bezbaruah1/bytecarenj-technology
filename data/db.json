@@ -1,6 +1,20 @@
 {
   "tickets": [
     {
+      "id": "BC-6031-KMR",
+      "customerName": "Syntax Test",
+      "phone": "1234567890",
+      "email": "",
+      "serviceType": "Testing",
+      "deviceModel": "N/A",
+      "problemDescription": "",
+      "status": "Pending",
+      "estimatedCost": 0,
+      "techNotes": "Job request submitted online. Awaiting technician inspection.",
+      "createdAt": "2026-10-07T17:52:48.441Z",
+      "updatedAt": "2026-10-07T17:52:48.442Z"
+    },
+    {
       "id": "BC-6670-KMR",
       "customerName": "tester",
       "phone": "8909765432",

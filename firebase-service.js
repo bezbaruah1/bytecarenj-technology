@@ -9,22 +9,43 @@ const path = require('path');
 let firestore = null;
 let initialized = false;
 
+const defaultFirebaseConfig = {
+  apiKey: process.env.FIREBASE_API_KEY || "AIzaSyBb9vLDNJFmgjPbjSmgSDkAZAUCqlGlgUY",
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN || "bytecarenj.firebaseapp.com",
+  projectId: process.env.FIREBASE_PROJECT_ID || "bytecarenj",
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET || "bytecarenj.firebasestorage.app",
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID || "4366889205",
+  appId: process.env.FIREBASE_APP_ID || "1:4366889205:web:436dd73ed6df17b41e15bc",
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID || "G-PNBCT2EGMW"
+};
+
+function getFirebaseConfig() {
+  try {
+    const configPath = path.join(__dirname, 'public', 'js', 'firebase-config.js');
+    if (fs.existsSync(configPath)) {
+      const configContent = fs.readFileSync(configPath, 'utf8');
+      const match = configContent.match(/const firebaseConfig = ({[\s\S]*?});/);
+      if (match) {
+        let parsed;
+        eval('parsed = ' + match[1]);
+        if (parsed && parsed.apiKey && parsed.apiKey !== 'YOUR_API_KEY') {
+          return parsed;
+        }
+      }
+    }
+  } catch (e) {
+    // Fallback to default config
+  }
+  return defaultFirebaseConfig;
+}
+
 function initFirestore() {
   if (initialized) return firestore;
   initialized = true;
 
   try {
-    const configPath = path.join(__dirname, 'public', 'js', 'firebase-config.js');
-    if (!fs.existsSync(configPath)) return null;
-
-    const configContent = fs.readFileSync(configPath, 'utf8');
-    const match = configContent.match(/const firebaseConfig = ({[\s\S]*?});/);
-    if (!match) return null;
-
-    let firebaseConfig;
-    eval('firebaseConfig = ' + match[1]);
-
-    if (!firebaseConfig.apiKey || firebaseConfig.apiKey === 'YOUR_API_KEY') {
+    const firebaseConfig = getFirebaseConfig();
+    if (!firebaseConfig || !firebaseConfig.apiKey) {
       return null;
     }
 

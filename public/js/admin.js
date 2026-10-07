@@ -171,18 +171,49 @@ async function loadTickets() {
   const tbody = document.getElementById('ticketsTableBody');
   if (!tbody) return;
 
+  let ticketsList = [];
+
   try {
     const res = await fetch('/api/admin/bookings', {
       headers: { 'Authorization': `Bearer ${adminToken}` }
     });
-    const data = await res.json();
-
-    if (!data.success || !data.tickets) {
-      tbody.innerHTML = `<tr><td colspan="8">Failed to load tickets.</td></tr>`;
-      return;
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.success && Array.isArray(data.tickets)) {
+        ticketsList = data.tickets;
+      }
     }
+  } catch (err) {
+    console.warn('API /api/admin/bookings notice:', err);
+  }
 
-    tbody.innerHTML = data.tickets.map(t => `
+  // Direct Cloud Firestore query & merge
+  if (window.BytecareFirebase && window.BytecareFirebase.isConfigured()) {
+    try {
+      const fsDb = window.BytecareFirebase.getDb();
+      if (fsDb) {
+        const snap = await fsDb.collection('tickets').get();
+        const cloudTickets = [];
+        snap.forEach(d => cloudTickets.push(d.data()));
+        if (cloudTickets.length > 0) {
+          const map = new Map();
+          ticketsList.forEach(t => map.set(t.id, t));
+          cloudTickets.forEach(t => map.set(t.id, t));
+          ticketsList = Array.from(map.values());
+          ticketsList.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+        }
+      }
+    } catch (fsErr) {
+      console.warn('Firestore tickets query notice:', fsErr);
+    }
+  }
+
+  if (ticketsList.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:1.5rem; color:var(--color-text-muted);">No repair tickets found.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = ticketsList.map(t => `
       <tr id="tr-ticket-${t.id}">
         <td><strong>${t.id}</strong></td>
         <td>

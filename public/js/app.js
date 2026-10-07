@@ -442,63 +442,62 @@ function setupForms() {
       };
 
       try {
-        const res = await fetch('/api/bookings', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
+        let createdTicket = null;
+        let apiSucceeded = false;
 
-        if (data.success) {
-          // Sync directly to Cloud Firestore from client
-          if (window.BytecareFirebase && window.BytecareFirebase.isConfigured()) {
-            try {
-              const fsDb = window.BytecareFirebase.getDb();
-              if (fsDb) {
-                await fsDb.collection('tickets').doc(data.ticket.id).set(data.ticket, { merge: true });
-                console.log('⚡ [Client Firestore] Ticket synced:', data.ticket.id);
-              }
-            } catch (fsErr) {
-              console.warn('Firestore direct sync notice:', fsErr);
+        try {
+          const res = await fetch('/api/bookings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.success && data.ticket) {
+              createdTicket = data.ticket;
+              apiSucceeded = true;
             }
           }
-
-          closeBookingModal();
-          bookingForm.reset();
-          showToast(`Success! Your Ticket ID is: ${data.ticket.id}`, 'success');
-          document.getElementById('trackInput').value = data.ticket.id;
-          await trackTicket(data.ticket.id);
-          document.getElementById('track').scrollIntoView({ behavior: 'smooth' });
-        } else {
-          showToast(data.error || 'Failed to submit booking', 'error');
+        } catch (fetchErr) {
+          console.warn('API /api/bookings unreachable, using Cloud Firestore fallback:', fetchErr);
         }
-      } catch (err) {
-        // Fallback directly to Cloud Firestore if server is offline or unreachable
+
+        // Direct Cloud Firestore write / sync
         if (window.BytecareFirebase && window.BytecareFirebase.isConfigured()) {
           try {
             const fsDb = window.BytecareFirebase.getDb();
-            const ticketId = window.BytecareFirebase.generateTicketId();
-            const newTicket = {
-              id: ticketId,
-              ...payload,
-              status: 'Pending',
-              estimatedCost: 0,
-              techNotes: 'New online booking via website',
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString()
-            };
-            await fsDb.collection('tickets').doc(ticketId).set(newTicket);
-            closeBookingModal();
-            bookingForm.reset();
-            showToast(`Success! Your Ticket ID is: ${ticketId}`, 'success');
-            document.getElementById('trackInput').value = ticketId;
-            await trackTicket(ticketId);
-            document.getElementById('track').scrollIntoView({ behavior: 'smooth' });
-            return;
+            if (fsDb) {
+              if (!createdTicket) {
+                const ticketId = window.BytecareFirebase.generateTicketId();
+                createdTicket = {
+                  id: ticketId,
+                  ...payload,
+                  status: 'Pending',
+                  estimatedCost: 0,
+                  techNotes: 'Job request submitted online (bytecarenj.in). Awaiting technician inspection.',
+                  createdAt: new Date().toISOString(),
+                  updatedAt: new Date().toISOString()
+                };
+              }
+              await fsDb.collection('tickets').doc(createdTicket.id).set(createdTicket, { merge: true });
+              console.log('⚡ [Cloud Firestore] Ticket saved successfully:', createdTicket.id);
+            }
           } catch (fsErr) {
-            console.error('Firestore fallback error:', fsErr);
+            console.warn('Firestore direct write notice:', fsErr);
           }
         }
+
+        if (createdTicket) {
+          closeBookingModal();
+          bookingForm.reset();
+          showToast(`Success! Your Ticket ID is: ${createdTicket.id}`, 'success');
+          document.getElementById('trackInput').value = createdTicket.id;
+          await trackTicket(createdTicket.id);
+          document.getElementById('track').scrollIntoView({ behavior: 'smooth' });
+        } else {
+          showToast('Failed to submit booking. Please call +91 ' + BYTECARE_WHATSAPP_NUMBER.slice(-10), 'error');
+        }
+      } catch (err) {
         showToast(`Server connection error. Please call +91 ${BYTECARE_WHATSAPP_NUMBER.slice(-10)}.`, 'error');
       }
     });
@@ -516,17 +515,41 @@ function setupForms() {
       };
 
       try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-        if (data.success) {
+        let sent = false;
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.success) sent = true;
+          }
+        } catch (_) {}
+
+        // Direct Cloud Firestore write for contact inquiry
+        if (window.BytecareFirebase && window.BytecareFirebase.isConfigured()) {
+          try {
+            const fsDb = window.BytecareFirebase.getDb();
+            const contactId = `MSG-${Date.now()}`;
+            await fsDb.collection('contacts').doc(contactId).set({
+              id: contactId,
+              ...payload,
+              status: 'Unread',
+              createdAt: new Date().toISOString()
+            });
+            sent = true;
+          } catch (fsErr) {
+            console.warn('Firestore contact write notice:', fsErr);
+          }
+        }
+
+        if (sent) {
           contactForm.reset();
           showToast('Inquiry submitted! We will contact you shortly.', 'success');
         } else {
-          showToast(data.error || 'Submission failed', 'error');
+          showToast('Error submitting contact form.', 'error');
         }
       } catch (err) {
         showToast('Error submitting contact form.', 'error');
@@ -592,10 +615,41 @@ async function trackTicket(identifier) {
   resultBox.innerHTML = `<div style="text-align:center; padding:1rem; color:rgba(255,255,255,0.7);">Searching database for "${identifier}"...</div>`;
 
   try {
-    const res = await fetch(`/api/bookings/track/${encodeURIComponent(identifier)}`);
-    const data = await res.json();
+    let tickets = [];
+    try {
+      const res = await fetch(`/api/bookings/track/${encodeURIComponent(identifier)}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.success && Array.isArray(data.tickets)) {
+          tickets = data.tickets;
+        }
+      }
+    } catch (_) {}
 
-    if (!data.success || !data.tickets || data.tickets.length === 0) {
+    // Direct Cloud Firestore lookup fallback
+    if (tickets.length === 0 && window.BytecareFirebase && window.BytecareFirebase.isConfigured()) {
+      try {
+        const fsDb = window.BytecareFirebase.getDb();
+        if (fsDb) {
+          const cleanId = (identifier || '').trim().toUpperCase();
+          const cleanPhone = (identifier || '').trim().replace(/\D/g, '');
+
+          const docSnap = await fsDb.collection('tickets').doc(cleanId).get();
+          if (docSnap.exists) {
+            tickets = [docSnap.data()];
+          } else if (cleanPhone.length >= 6) {
+            const querySnap = await fsDb.collection('tickets').where('phone', '==', cleanPhone).get();
+            if (!querySnap.empty) {
+              querySnap.forEach(d => tickets.push(d.data()));
+            }
+          }
+        }
+      } catch (fsErr) {
+        console.warn('Firestore tracking lookup notice:', fsErr);
+      }
+    }
+
+    if (tickets.length === 0) {
       resultBox.innerHTML = `
         <div style="background:rgba(239,68,68,0.15); border:1px solid #ef4444; padding:1.2rem; border-radius:8px; color:#fca5a5;">
           <strong>No matching tickets found!</strong><br>
@@ -615,7 +669,7 @@ async function trackTicket(identifier) {
     }
 
     let html = '';
-    data.tickets.forEach(ticket => {
+    tickets.forEach(ticket => {
       const stepIndex = getStepIndex(ticket.status);
       const badgeClass = getBadgeClass(ticket.status);
 

@@ -203,37 +203,62 @@ const defaultData = {
   }
 };
 
-function ensureDbExists() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+const os = require('os');
+
+let inMemoryCache = null;
+
+function getDbPath() {
+  if (process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    return path.join(os.tmpdir(), 'bytecare-db.json');
   }
-  if (!fs.existsSync(DB_FILE)) {
-    fs.writeFileSync(DB_FILE, JSON.stringify(defaultData, null, 2), 'utf8');
-  }
+  return DB_FILE;
 }
 
 function readDb() {
-  ensureDbExists();
-  try {
-    const raw = fs.readFileSync(DB_FILE, 'utf8');
-    const parsed = JSON.parse(raw);
-    // Ensure services and ownerProfile exist
-    if (!parsed.services || parsed.services.length === 0) {
-      parsed.services = defaultData.services;
-    }
-    if (!parsed.ownerProfile) {
-      parsed.ownerProfile = defaultData.ownerProfile;
-    }
-    return parsed;
-  } catch (err) {
-    console.error('Error reading DB, resetting to defaults:', err);
-    return defaultData;
+  if (inMemoryCache) {
+    return inMemoryCache;
   }
+
+  // 1. Try reading writable runtime path (e.g. /tmp in serverless)
+  const targetPath = getDbPath();
+  try {
+    if (fs.existsSync(targetPath)) {
+      const raw = fs.readFileSync(targetPath, 'utf8');
+      inMemoryCache = JSON.parse(raw);
+      return inMemoryCache;
+    }
+  } catch (err) {
+    // Ignore and fallback
+  }
+
+  // 2. Try reading bundled DB_FILE
+  try {
+    if (fs.existsSync(DB_FILE)) {
+      const raw = fs.readFileSync(DB_FILE, 'utf8');
+      inMemoryCache = JSON.parse(raw);
+      return inMemoryCache;
+    }
+  } catch (err) {
+    // Ignore and fallback
+  }
+
+  inMemoryCache = JSON.parse(JSON.stringify(defaultData));
+  return inMemoryCache;
 }
 
 function writeDb(data) {
-  ensureDbExists();
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
+  inMemoryCache = data;
+  const targetPath = getDbPath();
+  try {
+    const parentDir = path.dirname(targetPath);
+    if (!fs.existsSync(parentDir)) {
+      fs.mkdirSync(parentDir, { recursive: true });
+    }
+    fs.writeFileSync(targetPath, JSON.stringify(data, null, 2), 'utf8');
+  } catch (err) {
+    // Gracefully handle read-only filesystem in serverless environments
+    console.warn('⚠️ [Storage] Read-only filesystem in serverless runtime. State retained in-memory & Firestore:', err.message);
+  }
 }
 
 // Helpers
